@@ -1,0 +1,11 @@
+.mo-svga {
+  &__img{
+    width: 100%;
+    vertical-align: middle;
+  }
+  &__canvas {
+    width: 100% !important;
+    height: 100% !important;
+    vertical-align: middle;
+  }
+}

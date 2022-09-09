@@ -1,0 +1,16 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "Liqun",
+  "license": "MIT",
+  "dependencies": {
+    "moxui": "workspace:^1.0.0",
+    "vue": "^3.2.36"
+  }
+}

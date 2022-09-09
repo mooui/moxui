@@ -1,0 +1,17 @@
+{
+  "name": "moxui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "keywords": [
+    "moxui",
+    "vue3组件库"
+  ],
+  "author": "Liqun",
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "vue": "^3.2.36"
+  }
+}

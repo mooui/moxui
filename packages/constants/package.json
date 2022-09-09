@@ -1,0 +1,9 @@
+{
+  "name": "@moxui/constants",
+  "version": "1.0.0",
+  "description": "constants for moxui",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "Liqun",
+  "license": "MIT"
+}

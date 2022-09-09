@@ -1,0 +1,57 @@
+{
+  "name": "moxui",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "pnpm run -C play dev",
+    "docs:dev": "pnpm run -C docs dev",
+    "initCmp": "esno ./scripts/tools/addNewComponent",
+    "rmCmp": "esno ./scripts/tools/removeComponent",
+    "rmmo": "esno ./scripts/tools/clearNodeModules",
+    "rmdt": "rm -rf ./dist"
+  },
+  "keywords": [],
+  "author": "Liqun",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/shelljs": "^0.8.11",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "autoprefixer": "^10.4.8",
+    "colors": "^1.4.0",
+    "cpy": "^9.0.1",
+    "eslint": "^8.23.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.4.0",
+    "esno": "^0.16.3",
+    "fast-glob": "^3.2.11",
+    "postcss": "^8.4.16",
+    "postcss-px-to-viewport-8-plugin": "^1.1.5",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.8",
+    "shelljs": "^0.8.5",
+    "svga.lite": "^1.6.1",
+    "typescript": "^4.8.2",
+    "vite": "^3.0.9",
+    "vite-plugin-dts": "^1.4.1",
+    "vue": "^3.2.36",
+    "vue-eslint-parser": "^9.0.3"
+  },
+  "dependencies": {
+    "@moxui/components": "workspace:^1.0.0",
+    "@moxui/constants": "workspace:^1.0.0",
+    "@moxui/utils": "workspace:^1.0.0",
+    "moxui": "workspace:^1.0.0",
+    "svga.lite": "^1.6.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.36"
+  }
+}
