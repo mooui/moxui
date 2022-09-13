@@ -1,6 +1,7 @@
 import installer from "./defaults";
 
 export * from "@moxui/components";
+export * from "@moxui/plugins";
 export * from "./make-installer";
 
 export const install = installer.install;

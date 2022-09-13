@@ -1,0 +1,27 @@
+.mo-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &__svga {
+    width: 200px;
+    height: 200px;
+  }
+  .loading-enter-active,
+  .loading-leave-active {
+    transition: opacity .3s;
+  }
+
+  .loading-enter-from,
+  .loading-leave-to {
+    opacity: 0;
+  }
+}
+
+

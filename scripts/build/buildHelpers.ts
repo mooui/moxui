@@ -63,7 +63,7 @@ function generatePackageJson(
 }
 
 // 打包scss
-function buildScss(filePath: string | string[] = "components") {
+function buildScss(filePath: string | string[] = ["components", "plugins"]) {
   if (typeof filePath === "string") filePath = [filePath];
   const postcssProcessor = postcss([
     autoprefixer({

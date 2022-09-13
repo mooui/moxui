@@ -11,7 +11,9 @@
     "dev": "pnpm run -C play dev",
     "docs:dev": "pnpm run -C docs dev",
     "initCmp": "esno ./scripts/tools/addNewComponent",
+    "initPl": "esno ./scripts/tools/addNewPlugin",
     "rmCmp": "esno ./scripts/tools/removeComponent",
+    "rmPl": "esno ./scripts/tools/removePlugin",
     "rmmo": "esno ./scripts/tools/clearNodeModules",
     "rmdt": "rm -rf ./dist"
   },
@@ -47,6 +49,7 @@
   "dependencies": {
     "@moxui/components": "workspace:^1.0.0",
     "@moxui/constants": "workspace:^1.0.0",
+    "@moxui/plugins": "workspace:^1.0.0",
     "@moxui/utils": "workspace:^1.0.0",
     "moxui": "workspace:^1.0.0",
     "svga.lite": "^1.6.1"

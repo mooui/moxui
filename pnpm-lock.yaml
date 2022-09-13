@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@moxui/components': workspace:^1.0.0
       '@moxui/constants': workspace:^1.0.0
+      '@moxui/plugins': workspace:^1.0.0
       '@moxui/utils': workspace:^1.0.0
       '@types/shelljs': ^0.8.11
       '@typescript-eslint/eslint-plugin': ^5.36.1
@@ -35,6 +36,7 @@ importers:
     dependencies:
       '@moxui/components': link:packages/components
       '@moxui/constants': link:packages/constants
+      '@moxui/plugins': link:packages/plugins
       '@moxui/utils': link:packages/utils
       moxui: link:packages/moxui
       svga.lite: 1.6.1
