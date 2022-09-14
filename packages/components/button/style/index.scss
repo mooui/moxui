@@ -1,0 +1,26 @@
+.mo-button {
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 36px;
+  font-size: 30px;
+  font-weight: 600;
+  color:#2C2C2C;
+  border-radius: 100px;
+  &__confirm{
+    background-color: #FFE034;
+  }
+  &__cancel{
+    background-color: #F8FAFB;
+  }
+  &__large{
+    font-size: 34px;
+    line-height: 42px;
+  }
+
+  &__disabled{
+    opacity: .7;
+  }
+}

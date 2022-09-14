@@ -2,11 +2,11 @@ import { ExtractPropTypes, PropType } from "vue";
 
 export const marqueeProps = {
   width: {
-    type: String,
+    type: [String, Number],
     default: "100%",
   },
   height: {
-    type: String,
+    type: [String, Number],
     default: "100%",
   },
   // 滚动速度 px per second
