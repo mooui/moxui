@@ -8,6 +8,7 @@ import {
   moveMoxuiFileOut,
   getDependencies,
   generatePackageJson,
+  copyMoxuiFiles,
   buildScss,
 } from "./scripts/build/buildHelpers";
 
@@ -74,6 +75,7 @@ export default defineConfig({
         generatePackageJson(dependencyInfo);
         // 删除从moxui移到packages的文件
         restoreMoxui();
+        copyMoxuiFiles();
       },
     }),
     // 替换scss引入

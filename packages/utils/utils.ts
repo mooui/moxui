@@ -6,7 +6,7 @@ function pxToVw(
 ): string {
   if (typeof px === "string") {
     // 百分号结尾 直接返回
-    if (/%$/.test(px)) return px;
+    if (/(^auto)|%$/.test(px)) return px;
 
     if (!/^(\d+|\.\d+|\d+\.\d+)(px)?$/.test(px)) {
       console.warn(`${px} 设置不合法`);
@@ -16,4 +16,14 @@ function pxToVw(
   return Number(((px / designWidth) * 100).toFixed(unitPrecision)) + "vw";
 }
 
-export { pxToVw };
+const clientWidth = document.body.clientWidth;
+
+/**
+ * 实际尺寸
+ *   props尺寸以设计稿750px为参照
+ *   根据屏幕宽度转换为相应尺寸
+ */
+function realSize(size: number, baseWidth: number = 750) {
+  return (size * clientWidth) / baseWidth;
+}
+export { pxToVw, realSize, clientWidth };

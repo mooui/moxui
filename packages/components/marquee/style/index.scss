@@ -1,0 +1,17 @@
+.mo-marquee {
+  overflow: hidden;
+  &__content{
+    display: flex;
+    transition-timing-function: linear;
+    transition-property: all;
+  }
+  &__left-list{
+    display: flex;
+    transform: translateZ(0);
+  }
+  &__top-list{
+    display: flex;
+    flex-direction: column;
+    transform: translateZ(0);
+  }
+}

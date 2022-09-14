@@ -1,5 +1,4 @@
 import { createApp } from "vue";
-import Moxui from "moxui";
 (async () => {
   const apps = import.meta.glob("./src/*.vue");
   const name = location.pathname.replace(/^\//, "") || "App";
@@ -10,7 +9,7 @@ import Moxui from "moxui";
   }
   const App = ((await file()) as any).default;
 
-  const app = createApp(App).use(Moxui);
+  const app = createApp(App);
 
   app.mount("#play");
 })();

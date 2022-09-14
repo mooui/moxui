@@ -31,7 +31,7 @@ export default defineComponent({
     const cacheSVGA = ref<{ [key: string]: { svgaData: VideoEntity } }>({});
     const canvasRef = ref<HTMLCanvasElement>();
 
-    const isSVGA = computed(() => /\.svga$/i.test(props.file));
+    const isSVGA = computed(() => /(^data:application\/octet-stream)|(\.svga$)/i.test(props.file));
     const isShow = computed(() => (isSVGA.value ? isShowSVGA.value : true));
     const style = computed(() => {
       return {

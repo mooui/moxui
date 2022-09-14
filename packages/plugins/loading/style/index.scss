@@ -13,15 +13,14 @@
     width: 200px;
     height: 200px;
   }
-  .loading-enter-active,
-  .loading-leave-active {
-    transition: opacity .3s;
-  }
-
-  .loading-enter-from,
-  .loading-leave-to {
-    opacity: 0;
-  }
+}
+.mo-loading-enter-active,
+.mo-loading-leave-active {
+  transition: opacity .3s;
 }
 
+.mo-loading-enter-from,
+.mo-loading-leave-to {
+  opacity: 0;
+}
 

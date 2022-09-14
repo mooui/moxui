@@ -1,12 +1,12 @@
 <template>
-  <div>启动测试</div>
-  <svga-basic></svga-basic>
-  <svga-operator></svga-operator>
+  <div @click="showLoading">启动测试</div>
 </template>
 
 <script setup lang="ts">
-import SvgaBasic from "./examples/svga/basic.vue";
-import SvgaOperator from "./examples/svga/operator.vue";
+  import {Loading} from 'moxui';
+function showLoading(){
+  Loading({duration:2000})
+}
 </script>
 
 <style lang="scss"></style>

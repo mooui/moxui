@@ -10,7 +10,7 @@
   "author": "Liqun",
   "license": "MIT",
   "dependencies": {
-    "moxui": "workspace:^1.0.0",
+    "moxui": "npm:moxui@latest",
     "vue": "^3.2.36"
   }
 }

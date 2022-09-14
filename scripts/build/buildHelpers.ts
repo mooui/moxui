@@ -62,6 +62,26 @@ function generatePackageJson(
   new shelljs.ShellString(JSON.stringify(pkg, null, 2)).to(dest);
 }
 
+function copyMoxuiFiles(){
+  const source = "packages/moxui/";
+  const dist = "dist/moxui/";
+  const res: string[] = [];
+  shelljs.ls("-L", source).forEach((file) => {
+    if (
+      shelljs.test("-f", source + file) && !/\.(t|j)s$/.test(file) && !/package.*\.json$/.test(file)
+    ) {
+      shelljs.cp("-rf", source + file, dist);
+      res.push(dist + file);
+    }
+  });
+
+  function restore() {
+    shelljs.rm("-rf", res);
+  }
+  return restore;
+}
+
+
 // 打包scss
 function buildScss(filePath: string | string[] = ["components", "plugins"]) {
   if (typeof filePath === "string") filePath = [filePath];
@@ -118,4 +138,4 @@ function buildScss(filePath: string | string[] = ["components", "plugins"]) {
   });
 }
 
-export { moveMoxuiFileOut, getDependencies, generatePackageJson, buildScss };
+export { moveMoxuiFileOut, getDependencies,copyMoxuiFiles, generatePackageJson, buildScss };

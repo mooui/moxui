@@ -1,10 +1,19 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import path from 'path'
 import PostcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 
 import "./vite.init";
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      {
+        find: /^moxui$/,
+        replacement: path.resolve('../packages/moxui', 'index.ts'),
+      }
+    ],
+  },
   assetsInclude: ["**/*.svga"],
   css: {
     postcss: {

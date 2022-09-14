@@ -14,7 +14,7 @@ export default defineComponent({
       return h(
         Transition,
         {
-          name: "loading",
+          name: baseClass,
           appear: true,
           onAfterLeave: () => {
             props.onClosed && props.onClosed();

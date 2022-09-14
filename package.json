@@ -10,6 +10,7 @@
     "build": "vite build",
     "dev": "pnpm run -C play dev",
     "docs:dev": "pnpm run -C docs dev",
+    "release": "esno ./scripts/tools/release",
     "initCmp": "esno ./scripts/tools/addNewComponent",
     "initPl": "esno ./scripts/tools/addNewPlugin",
     "rmCmp": "esno ./scripts/tools/removeComponent",
@@ -21,6 +22,7 @@
   "author": "Liqun",
   "license": "MIT",
   "devDependencies": {
+    "@types/lodash": "^4.14.185",
     "@types/shelljs": "^0.8.11",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
@@ -51,7 +53,7 @@
     "@moxui/constants": "workspace:^1.0.0",
     "@moxui/plugins": "workspace:^1.0.0",
     "@moxui/utils": "workspace:^1.0.0",
-    "moxui": "workspace:^1.0.0",
+    "lodash": "^4.17.21",
     "svga.lite": "^1.6.1"
   },
   "peerDependencies": {
