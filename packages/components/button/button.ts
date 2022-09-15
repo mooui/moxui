@@ -8,7 +8,7 @@ import { pxToVw } from "@moxui/utils";
 export default defineComponent({
   name: "MoButton",
   props: buttonProps,
-  setup(props, { slots }) {
+  setup(props, { slots, attrs }) {
     const buttonTxt = computed(() => {
       return props.txt ? props.txt : props.type === "confirm" ? "确认" : "取消";
     });
@@ -45,6 +45,7 @@ export default defineComponent({
           ],
           style: buttonStyle.value,
           disabled: props.disabled,
+          ...attrs,
         },
         slots.default ? slots.default() : buttonTxt.value
       );

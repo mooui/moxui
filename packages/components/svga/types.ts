@@ -1,4 +1,4 @@
-import { ExtractPropTypes } from "vue";
+import type { ExtractPropTypes } from "vue";
 
 export const svgaProps = {
   // 绝对路径文件

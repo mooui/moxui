@@ -1,1 +1,117 @@
-.mo-popup {}
+.mo-popup {
+  position: fixed;
+  &__mask{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.mo-overflow-hidden{
+  overflow:hidden !important;
+}
+
+// fade
+.mo-fade-enter-active,
+.mo-fade-leave-active {
+  transition: opacity .3s;
+}
+
+.mo-fade-enter-from,
+.mo-fade-leave-to {
+  opacity: 0;
+}
+
+// zoom-fade
+.mo-zoom-fade-enter-active,
+.mo-zoom-fade-leave-active {
+  transition: transform .3s, opacity .3s;
+}
+
+.mo-zoom-fade-enter-from,
+.mo-zoom-fade-leave-to {
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(.2) !important;
+}
+
+
+// common active
+.mo-zoom-enter-active,
+.mo-zoom-leave-active,
+.mo-top-enter-active,
+.mo-top-leave-active,
+.mo-left-enter-active,
+.mo-left-leave-active,
+.mo-right-enter-active,
+.mo-right-leave-active,
+.mo-bottom-enter-active,
+.mo-bottom-leave-active{
+  transition: transform .3s;
+}
+// full
+.mo-top-full-enter-active,
+.mo-top-full-leave-active,
+.mo-left-full-enter-active,
+.mo-left-full-leave-active,
+.mo-right-full-enter-active,
+.mo-right-full-leave-active,
+.mo-bottom-full-enter-active,
+.mo-bottom-full-leave-active{
+  transition: transform .5s;
+}
+
+// zoom
+.mo-zoom-enter-from,
+.mo-zoom-leave-to {
+  transform: translate(-50%,-50%) scale(0) !important;
+}
+
+// top
+.mo-top-enter-from,
+.mo-top-leave-to {
+  transform: translate(-50%,-100%) !important;
+}
+
+// top-full
+.mo-top-full-enter-from,
+.mo-top-full-leave-to {
+  transform: translate(-50%,-100vh) !important;
+}
+
+// left
+.mo-left-enter-from,
+.mo-left-leave-to {
+  transform: translate(-100%,-50%) !important;
+}
+
+// left-full
+.mo-left-full-enter-from,
+.mo-left-full-leave-to {
+  transform: translate(-100vw,-50%) !important;
+}
+
+// right
+.mo-right-enter-from,
+.mo-right-leave-to {
+  transform: translate(100%,-50%) !important;
+}
+
+// right-full
+.mo-right-full-enter-from,
+.mo-right-full-leave-to {
+  transform: translate(100vw,-50%) !important;
+}
+
+// bottom
+.mo-bottom-enter-from,
+.mo-bottom-leave-to {
+  transform: translate(-50%,100%) !important;
+}
+
+// bottom
+.mo-bottom-full-enter-from,
+.mo-bottom-full-leave-to {
+  transform: translate(-50%,100%) !important;
+}

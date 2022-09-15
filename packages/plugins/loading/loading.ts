@@ -8,7 +8,7 @@ import { loadingProps } from "./types";
 export default defineComponent({
   name: "MoLoading",
   props: loadingProps,
-  setup(this, props) {
+  setup(props, { attrs }) {
     const baseClass = "mo-loading";
     return () => {
       return h(
@@ -27,6 +27,7 @@ export default defineComponent({
               {
                 class: baseClass,
                 style: { backgroundColor: props.backgroundColor },
+                ...attrs,
               },
               h(
                 "div",

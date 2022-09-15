@@ -26,4 +26,13 @@ const clientWidth = document.body.clientWidth;
 function realSize(size: number, baseWidth: number = 750) {
   return (size * clientWidth) / baseWidth;
 }
-export { pxToVw, realSize, clientWidth };
+
+let gloalZIndex = 2000;
+function getGlobalZIndex() {
+  return gloalZIndex++;
+}
+function setGlobalZIndex(index: number) {
+  gloalZIndex = index;
+}
+
+export { pxToVw, realSize, clientWidth, getGlobalZIndex, setGlobalZIndex };

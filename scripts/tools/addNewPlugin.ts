@@ -45,7 +45,7 @@ function initPluginFolder(name: string) {
   // types.ts
   new shelljs.ShellString(
     [
-      `import { ExtractPropTypes } from "vue";`,
+      `import type { ExtractPropTypes } from "vue";`,
       "",
       `export const ${smallCamelCase(name)}Props = {};`,
       "",

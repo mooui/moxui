@@ -1,0 +1,17 @@
+{
+  "name": "@moxui/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "keywords": [
+    "moxui",
+    "moxui hooks",
+    "for mobile"
+  ],
+  "author": "Liqun",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.2.36"
+  }
+}

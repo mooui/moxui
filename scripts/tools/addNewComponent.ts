@@ -31,6 +31,7 @@ function initComponentFolder(name: string) {
       `import { withInstall } from "@moxui/utils";`,
       `import ${smallCamelCase(name)} from "./${name}";`,
       "",
+      `export type { ${camelCase(name)}Props } from "./types";`,
       `export const Mo${camelCase(name)} = withInstall(${smallCamelCase(
         name
       )});`,
@@ -41,7 +42,7 @@ function initComponentFolder(name: string) {
   // types.ts
   new shelljs.ShellString(
     [
-      `import { ExtractPropTypes } from "vue";`,
+      `import type { ExtractPropTypes } from "vue";`,
       "",
       `export const ${smallCamelCase(name)}Props = {};`,
       "",
