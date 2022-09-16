@@ -28,6 +28,7 @@ function initPluginFolder(name: string) {
   // index.ts
   new shelljs.ShellString(
     [
+      `import type { App } from "vue";`,
       `import ${smallCamelCase(name)} from "./${name}";`,
       "",
       `function ${camelCase(name)}() {}`,
