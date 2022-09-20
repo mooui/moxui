@@ -55,6 +55,7 @@
     "@moxui/plugins": "workspace:^1.0.0",
     "@moxui/utils": "workspace:^1.0.0",
     "lodash": "^4.17.21",
+    "moxui": "workspace:^1.0.0",
     "svga.lite": "^1.6.1"
   },
   "peerDependencies": {

@@ -30,4 +30,13 @@ function getScrollParent(el: HTMLElement, root?: HTMLElement) {
   return root;
 }
 
-export { stopPropagation, preventDefault, getScrollParent };
+function isDescendant(root: Element, ele: Element) {
+  let node: Element | null = ele;
+  while (node && node.nodeName !== "BODY") {
+    if (node === root) return true;
+    node = node.parentElement;
+  }
+  return false;
+}
+
+export { stopPropagation, preventDefault, getScrollParent, isDescendant };

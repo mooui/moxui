@@ -22,9 +22,18 @@ const clientWidth = document.body.clientWidth;
  * 实际尺寸
  *   props尺寸以设计稿750px为参照
  *   根据屏幕宽度转换为相应尺寸
+ * @param size number | px | vw
  */
-function realSize(size: number, baseWidth: number = 750) {
-  return (size * clientWidth) / baseWidth;
+function realSize(size: number | string, baseWidth: number = 750) {
+  if (typeof size === "number" || /\d+(px)?$/.test(size)) {
+    size = parseFloat("" + size);
+    return (size * clientWidth) / baseWidth;
+  } else if (/vw$/.test(size)) {
+    size = parseFloat(size);
+    return (size * clientWidth) / 100;
+  } else {
+    return clientWidth;
+  }
 }
 
 let gloalZIndex = 2000;
