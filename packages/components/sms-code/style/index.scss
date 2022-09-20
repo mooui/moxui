@@ -1,0 +1,81 @@
+:root{
+  --mo-sms-code-width:500px;
+}
+
+.mo-sms-code {
+  overflow: hidden;
+  width: var(--mo-sms-code-width);
+  margin:0 auto;
+  user-select: none;
+
+  &__title{
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    color:#000;
+    font-size: 40px;
+    line-height: 50px;
+
+  }
+  &__wrapper{
+    position: relative;
+  }
+  &__items{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item{
+    position: relative;
+    width: 60px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-family: Helvetica;
+    border-bottom: 4px solid #f2f3f6;
+
+    font-size: 60px;
+    color: #2c2c2c;
+    &-active {
+      &:after {
+        position: absolute;
+        top: 10px;
+        left: 28px;
+        content: '';
+        width: 4px;
+        height: 50px;
+        background: #ffe034;
+        border-radius: 2px;
+        animation: cursor 1.2s infinite;
+      }
+    }
+  }
+  &__input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color:transparent;
+  }
+  &__tips{
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 32px;
+    color:#a1a6aa;
+  }
+}
+
+@keyframes cursor {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
