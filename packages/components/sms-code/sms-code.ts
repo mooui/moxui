@@ -2,7 +2,6 @@ import { h, defineComponent, ref, watch, onMounted } from "vue";
 
 import { smsCodeProps } from "./types";
 
-import "./style/index.scss";
 export default defineComponent({
   name: "MoSmsCode",
   props: smsCodeProps,

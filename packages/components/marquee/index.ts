@@ -1,4 +1,4 @@
-import { withInstall } from "@moxui/utils";
+import { withInstall } from "@moxui/utils/withInstall";
 import marquee from "./marquee";
 
 export type { MarqueeProps } from "./types";

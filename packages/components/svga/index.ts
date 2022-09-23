@@ -1,4 +1,4 @@
-import { withInstall } from "@moxui/utils";
+import { withInstall } from "@moxui/utils/withInstall";
 import svga from "./svga";
 
 export type { SvgaProps } from "./types";

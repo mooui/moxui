@@ -10,11 +10,9 @@ import {
   onBeforeUnmount,
 } from "vue";
 import { debounce } from "lodash";
-import { pxToVw, realSize } from "@moxui/utils";
+import { pxToVw, realSize } from "@moxui/utils/utils";
 
 import { marqueeProps } from "./types";
-
-import "./style/index.scss";
 
 export default defineComponent({
   name: "MoMarquee",

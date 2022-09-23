@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import path from 'path'
+import path from "path";
+import { createStyleImportPlugin } from "vite-plugin-style-import";
 import PostcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 
 import "./vite.init";
@@ -8,10 +9,10 @@ import "./vite.init";
 export default defineConfig({
   resolve: {
     alias: [
-      {
-        find: /^moxui$/,
-        replacement: path.resolve('../packages/moxui', 'index.ts'),
-      }
+      // {
+      //   find: /^moxui$/,
+      //   replacement: path.resolve('../packages/moxui', 'index.ts'),
+      // }
     ],
   },
   assetsInclude: ["**/*.svga"],
@@ -36,5 +37,49 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    createStyleImportPlugin({
+      resolves: [
+        {
+          libraryName: "@moxui/components",
+          esModule: true,
+          resolveStyle: (name) => {
+            return path.resolve(
+              `../packages/components/${name.replace(/^mo-/, "")}/style/index`
+            );
+          },
+        },
+        {
+          libraryName: "@moxui/plugins",
+          esModule: true,
+          resolveStyle: (name) => {
+            return path.resolve(`../packages/plugins/${name}/style/index`);
+          },
+        },
+        {
+          libraryName: "@moxui/hooks",
+          esModule: true,
+          resolveStyle: () => {
+            return path.resolve(`../packages/style/index`);
+          },
+        },
+      ],
+      libs: [
+        {
+          libraryName: "moxui",
+          esModule: true,
+          resolveStyle: (name) => {
+            if (/^mo-/.test(name)) {
+              return `components/${name.replace(/^mo-/, "")}/style/index`;
+            } else if (["loading", "toast"].indexOf(name) !== -1) {
+              return `plugins/${name}/style/index`;
+            } else {
+              return "style/index";
+            }
+          },
+        },
+      ],
+    }),
+  ],
 });

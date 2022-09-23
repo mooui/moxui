@@ -1,7 +1,6 @@
 import { h, defineComponent, Transition } from "vue";
-import { MoSvga } from "@moxui/components";
+import { MoSvga } from "@moxui/components/svga";
 import loadingSvga from "./assets/loading.svga";
-import "./style/index.scss";
 
 import { loadingProps } from "./types";
 
@@ -14,7 +13,7 @@ export default defineComponent({
       return h(
         Transition,
         {
-          name: baseClass,
+          name: "mo-fade3",
           appear: true,
           onAfterLeave: () => {
             props.onClosed && props.onClosed();
@@ -26,7 +25,10 @@ export default defineComponent({
               "div",
               {
                 class: baseClass,
-                style: { backgroundColor: props.backgroundColor },
+                style: {
+                  backgroundColor: props.backgroundColor,
+                  zIndex: props.zIndex,
+                },
                 ...attrs,
               },
               h(

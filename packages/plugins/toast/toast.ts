@@ -7,12 +7,10 @@ import {
   vShow,
   CSSProperties,
 } from "vue";
-import { getGlobalZIndex, pxToVw } from "@moxui/utils";
+import { getGlobalZIndex, pxToVw } from "@moxui/utils/utils";
 
 import { toastProps, IconProp } from "./types";
 import icons from "./icon";
-
-import "./style/index.scss";
 
 export default defineComponent({
   name: "MoToast",
@@ -106,7 +104,7 @@ export default defineComponent({
       return h(
         Transition,
         {
-          name: baseClass,
+          name: "mo-fade",
           onAfterLeave: () => {
             emit("closed");
           },

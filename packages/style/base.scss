@@ -1,0 +1,78 @@
+@import './font/DIN-Bold/DIN-Bold.css';
+
+.mo-overflow-hidden{
+  overflow:hidden !important;
+}
+
+// transition-name
+// fade
+.mo-fade-enter-active,
+.mo-fade-leave-active {
+  transition: opacity .5s;
+}
+// .3s fade
+.mo-fade3-enter-active,
+.mo-fade3-leave-active {
+  transition: opacity .3s;
+}
+.mo-fade3-enter-from,
+.mo-fade3-leave-to,
+.mo-fade-enter-from,
+.mo-fade-leave-to {
+  opacity: 0;
+}
+
+
+// animation
+// 旋转
+@keyframes mo-rotate {
+  to{
+    transform: rotate(360deg);
+  }
+}
+// 脉搏
+@keyframes mo-pulse {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+// utils类
+.mo-clearfix{
+  &:after{
+    content:'';
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+  }
+}
+
+.mo-thide {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mo-thide-2{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mo-thide-2{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mo-bg-full{
+  background-size: 100% 100%;
+}

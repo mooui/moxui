@@ -2,8 +2,7 @@ import { h, defineComponent, computed } from "vue";
 
 import { buttonProps } from "./types";
 
-import "./style/index.scss";
-import { pxToVw } from "@moxui/utils";
+import { pxToVw } from "@moxui/utils/utils";
 
 export default defineComponent({
   name: "MoButton",

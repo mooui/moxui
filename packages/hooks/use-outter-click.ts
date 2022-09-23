@@ -1,5 +1,5 @@
 import { onBeforeUnmount, onMounted, type Ref } from "vue";
-import { isDescendant } from "@moxui/utils";
+import { isDescendant } from "@moxui/utils/dom";
 
 function useOutterClick(
   root: Ref<HTMLElement | undefined | null>,

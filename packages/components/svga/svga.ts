@@ -17,8 +17,7 @@ import {
 } from "svga.lite";
 import { svgaProps } from "./types";
 
-import "./style/index.scss";
-import { pxToVw } from "@moxui/utils";
+import { pxToVw } from "@moxui/utils/utils";
 
 export default defineComponent({
   name: "MoSvga",

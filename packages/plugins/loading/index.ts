@@ -1,6 +1,6 @@
 import type { App } from "vue";
 import { mergeProps, createVNode, ref } from "vue";
-import { mountComponent } from "@moxui/utils";
+import { mountComponent, getGlobalZIndex } from "@moxui/utils";
 import { LoadingOptions } from "./types";
 import loading from "./loading";
 
@@ -15,6 +15,7 @@ function Loading(options?: LoadingOptions | boolean) {
     options = {};
   }
   const { show = true, duration, backgroundColor } = options;
+  const zIndex = options.zIndex || getGlobalZIndex();
   if (!show) {
     ins && ins.close();
   } else {
@@ -31,6 +32,7 @@ function Loading(options?: LoadingOptions | boolean) {
             mergeProps(
               {
                 backgroundColor,
+                zIndex,
               },
               { show: showLoading.value, onClosed }
             )

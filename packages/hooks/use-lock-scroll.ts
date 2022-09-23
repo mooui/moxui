@@ -7,7 +7,7 @@ import {
   onActivated,
 } from "vue";
 import { useTouch } from "./use-touch";
-import { preventDefault, getScrollParent } from "@moxui/utils";
+import { preventDefault, getScrollParent } from "@moxui/utils/dom";
 
 let totalLockCount = 0;
 

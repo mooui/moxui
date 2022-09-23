@@ -9,7 +9,7 @@ import {
   onBeforeUnmount,
 } from "vue";
 import { throttle } from "lodash";
-import { realSize } from "@moxui/utils";
+import { realSize } from "@moxui/utils/utils";
 
 import { stickyProps } from "./types";
 

@@ -19,8 +19,6 @@ import { useLockScroll } from "@moxui/hooks";
 
 import { popupProps } from "./types";
 
-import "./style/index.scss";
-
 export default defineComponent({
   name: "MoPopup",
   props: popupProps,

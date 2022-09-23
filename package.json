@@ -10,6 +10,7 @@
     "build": "vite build",
     "dev": "pnpm run -C play dev",
     "docs:dev": "pnpm run -C docs dev",
+    "bs": "esno ./scripts/tools/buildScss",
     "release": "esno ./scripts/tools/release",
     "initCmp": "esno ./scripts/tools/addNewComponent",
     "initPl": "esno ./scripts/tools/addNewPlugin",

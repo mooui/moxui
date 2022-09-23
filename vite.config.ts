@@ -2,16 +2,15 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
-import replaceScssPlugin from "./scripts/plugin/replaceScssPlugin";
+// import replaceScssPlugin from "./scripts/plugin/replaceScssPlugin";
 
 import {
   moveMoxuiFileOut,
   getDependencies,
   generatePackageJson,
   copyMoxuiFiles,
-  buildScss,
 } from "./scripts/build/buildHelpers";
-
+import buildScss from "./scripts/build/buildScss";
 const restoreMoxui = moveMoxuiFileOut();
 
 const dependencyInfo = getDependencies();
@@ -79,6 +78,6 @@ export default defineConfig({
       },
     }),
     // 替换scss引入
-    replaceScssPlugin(),
+    // replaceScssPlugin(),
   ],
 });

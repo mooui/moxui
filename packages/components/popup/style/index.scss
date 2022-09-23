@@ -9,21 +9,6 @@
   }
 }
 
-.mo-overflow-hidden{
-  overflow:hidden !important;
-}
-
-// fade
-.mo-fade-enter-active,
-.mo-fade-leave-active {
-  transition: opacity .3s;
-}
-
-.mo-fade-enter-from,
-.mo-fade-leave-to {
-  opacity: 0;
-}
-
 // zoom-fade
 .mo-zoom-fade-enter-active,
 .mo-zoom-fade-leave-active {

@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ["/dist", "/node_modules"],
   rules: {
     // 缩进一致
     // indent: ["warn", 2],
