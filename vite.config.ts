@@ -24,6 +24,7 @@ export default defineConfig({
     //压缩
     minify: false,
     emptyOutDir: true,
+    assetsInlineLimit: 0,
     rollupOptions: {
       // 依赖不打包进代码
       // scss 另行处理

@@ -7,6 +7,9 @@ import PostcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 import "./vite.init";
 
 export default defineConfig({
+  server: {
+    host: "0.0.0.0",
+  },
   resolve: {
     alias: [
       // {
@@ -42,9 +45,20 @@ export default defineConfig({
     createStyleImportPlugin({
       resolves: [
         {
+          libraryName: "@moxui/*",
+          esModule: true,
+          resolveStyle: (name) => {
+            console.log(22222, name);
+            return path.resolve(
+              `../packages/components/${name.replace(/^mo-/, "")}/style/index`
+            );
+          },
+        },
+        {
           libraryName: "@moxui/components",
           esModule: true,
           resolveStyle: (name) => {
+            console.log(333);
             return path.resolve(
               `../packages/components/${name.replace(/^mo-/, "")}/style/index`
             );

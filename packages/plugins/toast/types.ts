@@ -26,6 +26,12 @@ export const toastProps = {
     type: String as PropType<"inline" | "center">,
     default: "center",
   },
+  mask: {
+    type: [Boolean, String],
+    default: false,
+  },
+  // 默认false, 使用mask时,默认为true
+  forbidClick: Boolean,
 };
 
 export interface TypedToastOptions {
@@ -34,6 +40,8 @@ export interface TypedToastOptions {
   duration?: number;
   transitionDuration?: number;
   zIndex?: number;
+  mask?: boolean | string;
+  forbidClick?: boolean;
 }
 export interface ToastOptions extends TypedToastOptions {
   type?: "loading" | "success" | "warn" | "error";

@@ -1,5 +1,6 @@
 import {
   h,
+  ref,
   defineComponent,
   Transition,
   computed,
@@ -7,10 +8,11 @@ import {
   vShow,
   CSSProperties,
 } from "vue";
+
+import { MoIcon } from "@moxui/components/icon";
 import { getGlobalZIndex, pxToVw } from "@moxui/utils/utils";
 
 import { toastProps, IconProp } from "./types";
-import icons from "./icon";
 
 export default defineComponent({
   name: "MoToast",
@@ -47,12 +49,9 @@ export default defineComponent({
         }
 
         let src = formatIcon.src!;
+        let buildIn = false;
         if (["loading", "success", "warn", "error"].indexOf(src) !== -1) {
-          if (pos === "center") {
-            src = (icons as any)[src];
-          } else {
-            src = (icons as any)[src + "Mini"];
-          }
+          buildIn = true;
         }
 
         return {
@@ -61,10 +60,13 @@ export default defineComponent({
           height: formatIcon.height ? pxToVw(formatIcon.height) : void 0,
           isLoading: formatIcon.isLoading,
           position: pos,
+          buildIn,
         };
       }
       return null;
     });
+
+    const closed = ref(false);
 
     const style = computed(() => {
       const res: CSSProperties = {};
@@ -77,6 +79,9 @@ export default defineComponent({
     const baseClass = "mo-toast";
 
     function renderContent() {
+      if (props.show) {
+        closed.value = false;
+      }
       if (!icon.value) {
         return props.message;
       } else {
@@ -86,14 +91,31 @@ export default defineComponent({
             class: `${baseClass}__${icon.value.position}-icon`,
           },
           [
-            h("img", {
-              src: icon.value.src,
-              class: [baseClass + "__icon", { loading: icon.value.isLoading }],
-              style: {
-                width: icon.value.width,
-                height: icon.value.height,
-              },
-            }),
+            icon.value.buildIn
+              ? closed.value // 完成后隐藏内置icon 以便下一次显示动画
+                ? null
+                : h(MoIcon, {
+                    type: icon.value.src as any,
+                    size: icon.value.width
+                      ? icon.value.width
+                      : icon.value.position === "inline"
+                      ? 30
+                      : 60,
+                    animate: true,
+                    color: "#fff",
+                  })
+              : h("img", {
+                  src: icon.value.src,
+                  class: [
+                    baseClass + "__icon",
+                    { loading: icon.value.isLoading },
+                  ],
+                  style: {
+                    width: icon.value.width,
+                    height: icon.value.height,
+                  },
+                }),
+
             h("p", {}, props.message),
           ]
         );
@@ -101,12 +123,26 @@ export default defineComponent({
     }
 
     return () => {
+      const mask =
+        props.mask === false
+          ? null
+          : props.mask === true || !props.mask
+          ? "rgba(0,0,0,.2)"
+          : props.mask;
+      const forbidClick =
+        typeof props.forbidClick === "undefined"
+          ? mask
+            ? true
+            : false
+          : props.forbidClick;
+
       return h(
         Transition,
         {
           name: "mo-fade",
           onAfterLeave: () => {
             emit("closed");
+            closed.value = true;
           },
         },
         () => {
@@ -117,6 +153,8 @@ export default defineComponent({
                 class: baseClass + "__wrapper",
                 style: {
                   zIndex: props.zIndex || getGlobalZIndex(),
+                  pointerEvents: forbidClick ? "all" : null,
+                  background: mask,
                 },
               },
               h(

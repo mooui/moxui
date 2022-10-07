@@ -12,15 +12,10 @@
 }
 
 .mo-toast {
-  position: absolute;
-  top: -50%;
-  left: -50%;
+  width:auto;
   box-sizing: border-box;
   text-align: center;
-  transition: margin .3s;
-  transform: translate(-50%,-50%);
 
-  width:auto;
   min-width: var(--mo-toast-min-width);
   max-width: var(--mo-toast-max-width);
   padding: var(--mo-toast-padding);
@@ -41,7 +36,7 @@
     padding-top: 25px;
     padding-bottom: 15px;
   }
-  &__center-icon &__icon{
+  &__center-icon &__icon,&__center-icon svg{
     margin:0 auto 25px;
     width: var(--mo-toast-icon-size);
     height: var(--mo-toast-icon-size);
@@ -51,7 +46,7 @@
     display: flex;
     align-items: center;
   }
-  &__inline-icon &__icon{
+  &__inline-icon &__icon,&__inline-icon svg{
     margin-right: 10px;
     width: var(--mo-toast-line-height);
     height: var(--mo-toast-line-height);
@@ -60,9 +55,16 @@
   // 外层容器
   &__wrapper{
     position: fixed;
-    top: 100%;
-    left: 100%;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // 使用点击穿透
+    pointer-events: none;
+
+    // 使toast居中
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

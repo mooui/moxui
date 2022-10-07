@@ -1,0 +1,94 @@
+.mo-icon {
+  .animate &__circle{
+    stroke-dasharray: 1194;
+    stroke-dashoffset: 1194;
+    animation-name:  circle;
+    animation-timing-function: ease-in-out;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
+  }
+  .animate &__tick{
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+    animation-name:  tick;
+    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+  }
+  .animate &__cross{
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation-name:  cross;
+    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+  }
+  .animate &__dot{
+    animation: mo-fade-in .2s .8s ease-out backwards;
+  }
+  .animate &__bar{
+    stroke-dasharray: 350;
+    stroke-dashoffset: 350;
+    animation-name:  tick;
+    animation-timing-function: ease-in-out;
+    animation-duration: .3s;
+    animation-delay: .6s;
+    animation-fill-mode: forwards;
+  }
+  &__loading-circle{
+    stroke-dasharray:900, 2364;
+  }
+  &__loading.animate{
+    animation: mo-rotate 1.7s linear infinite;
+  }
+  &__loading.animate &__loading-circle{
+    animation: loading-circle 1s linear infinite;
+  }
+}
+
+@keyframes circle {
+  from {
+    stroke-dashoffset: 1194;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tick {
+  from {
+    stroke-dashoffset: 350;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes cross {
+  from {
+    stroke-dashoffset: 200;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+// 1182
+@keyframes loading-circle {
+  0%{
+    stroke-dasharray: 0, 2364;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dasharray:900, 2364;
+    stroke-dashoffset: -473;
+  }
+  100%{
+    stroke-dasharray: 900, 2364;
+    stroke-dashoffset: -1182;
+  }
+
+}

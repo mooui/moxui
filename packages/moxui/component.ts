@@ -5,6 +5,7 @@ import { MoPopup } from "@moxui/components/popup";
 import { MoButton } from "@moxui/components/button";
 import { MoSticky } from "@moxui/components/sticky";
 import { MoSmsCode } from "@moxui/components/sms-code";
+import { MoIcon } from "@moxui/components/icon";
 
 export default [
   MoSvga,
