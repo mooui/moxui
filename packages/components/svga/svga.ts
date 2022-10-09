@@ -16,7 +16,7 @@ import {
   FILL_MODE,
 } from "svga.lite";
 import { svgaProps } from "./types";
-
+import "./style";
 import { pxToVw } from "@moxui/utils/utils";
 
 export default defineComponent({

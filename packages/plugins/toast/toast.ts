@@ -12,6 +12,7 @@ import {
 import { MoIcon } from "@moxui/components/icon";
 import { getGlobalZIndex, pxToVw } from "@moxui/utils/utils";
 
+import "./style";
 import { toastProps, IconProp } from "./types";
 
 export default defineComponent({

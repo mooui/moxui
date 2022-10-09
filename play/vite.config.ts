@@ -42,58 +42,58 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    createStyleImportPlugin({
-      resolves: [
-        {
-          libraryName: "@moxui/*",
-          esModule: true,
-          resolveStyle: (name) => {
-            console.log(22222, name);
-            return path.resolve(
-              `../packages/components/${name.replace(/^mo-/, "")}/style/index`
-            );
-          },
-        },
-        {
-          libraryName: "@moxui/components",
-          esModule: true,
-          resolveStyle: (name) => {
-            console.log(333);
-            return path.resolve(
-              `../packages/components/${name.replace(/^mo-/, "")}/style/index`
-            );
-          },
-        },
-        {
-          libraryName: "@moxui/plugins",
-          esModule: true,
-          resolveStyle: (name) => {
-            return path.resolve(`../packages/plugins/${name}/style/index`);
-          },
-        },
-        {
-          libraryName: "@moxui/hooks",
-          esModule: true,
-          resolveStyle: () => {
-            return path.resolve(`../packages/style/index`);
-          },
-        },
-      ],
-      libs: [
-        {
-          libraryName: "moxui",
-          esModule: true,
-          resolveStyle: (name) => {
-            if (/^mo-/.test(name)) {
-              return `components/${name.replace(/^mo-/, "")}/style/index`;
-            } else if (["loading", "toast"].indexOf(name) !== -1) {
-              return `plugins/${name}/style/index`;
-            } else {
-              return "style/index";
-            }
-          },
-        },
-      ],
-    }),
+    // createStyleImportPlugin({
+    //   resolves: [
+    //     {
+    //       libraryName: "moxui",
+    //       esModule: true,
+    //       resolveStyle: (name) => {
+    //         console.log(111111111, name);
+    //         return path.resolve(
+    //           `../packages/components/${name.replace(/^mo-/, "")}/style/index`
+    //         );
+    //       },
+    //     },
+    //     // {
+    //     //   libraryName: "@moxui/components",
+    //     //   esModule: true,
+    //     //   resolveStyle: (name) => {
+    //     //     return path.resolve(
+    //     //       `../packages/components/${name.replace(/^mo-/, "")}/style/index`
+    //     //     );
+    //     //   },
+    //     // },
+    //     // {
+    //     //   libraryName: "@moxui/plugins",
+    //     //   esModule: true,
+    //     //   resolveStyle: (name) => {
+    //     //     return path.resolve(`../packages/plugins/${name}/style/index`);
+    //     //   },
+    //     // },
+    //     // {
+    //     //   libraryName: "@moxui/hooks",
+    //     //   esModule: true,
+    //     //   resolveStyle: () => {
+    //     //     return path.resolve(`../packages/style/index`);
+    //     //   },
+    //     // },
+    //   ],
+    //   libs: [
+    //     {
+    //       libraryName: "moxui",
+    //       esModule: true,
+    //       resolveStyle: (name) => {
+    //         console.log(name);
+    //         if (/^mo-/.test(name)) {
+    //           return `components/${name.replace(/^mo-/, "")}/style/index`;
+    //         } else if (["loading", "toast"].indexOf(name) !== -1) {
+    //           return `plugins/${name}/style/index`;
+    //         } else {
+    //           return "style/index";
+    //         }
+    //       },
+    //     },
+    //   ],
+    // }),
   ],
 });

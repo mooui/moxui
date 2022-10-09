@@ -1,3 +1,4 @@
+import "@moxui/style";
 import installer from "./defaults";
 
 export * from "@moxui/components";

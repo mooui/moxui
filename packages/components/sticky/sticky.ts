@@ -11,6 +11,7 @@ import {
 import { throttle } from "lodash";
 import { realSize } from "@moxui/utils/utils";
 
+import "./style";
 import { stickyProps } from "./types";
 
 export default defineComponent({

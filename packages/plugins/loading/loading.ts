@@ -2,6 +2,7 @@ import { h, defineComponent, Transition } from "vue";
 import { MoSvga } from "@moxui/components/svga";
 import loadingSvga from "./assets/loading.svga";
 
+import "./style";
 import { loadingProps } from "./types";
 
 export default defineComponent({

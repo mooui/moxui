@@ -1,5 +1,6 @@
 import { h, defineComponent, computed } from "vue";
 
+import "./style";
 import { buttonProps } from "./types";
 
 import { pxToVw } from "@moxui/utils/utils";

@@ -1,5 +1,6 @@
-import { h, defineComponent, ref, watch, onMounted } from "vue";
+import { h, defineComponent, ref, onMounted } from "vue";
 
+import "./style";
 import { smsCodeProps } from "./types";
 
 export default defineComponent({

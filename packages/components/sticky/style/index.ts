@@ -1,2 +1,1 @@
-import "../../../style/index";
-// import "./index.scss";
+import "./index.scss";

@@ -12,6 +12,7 @@ import {
 import { debounce } from "lodash";
 import { pxToVw, realSize } from "@moxui/utils/utils";
 
+import "./style";
 import { marqueeProps } from "./types";
 
 export default defineComponent({
