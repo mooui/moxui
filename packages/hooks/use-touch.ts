@@ -26,6 +26,8 @@ export function useTouch() {
   const isHorizontal = () => direction.value === "horizontal";
 
   const reset = () => {
+    startX.value = 0;
+    startY.value = 0;
     deltaX.value = 0;
     deltaY.value = 0;
     offsetX.value = 0;

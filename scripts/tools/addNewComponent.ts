@@ -23,6 +23,7 @@ function initComponentFolder(name: string) {
     `packages/components/${name}/types.ts`,
     `packages/components/${name}/${name}.ts`,
     `packages/components/${name}/style/index.scss`,
+    `packages/components/${name}/style/index.ts`,
   ]);
 
   // index.ts
@@ -58,9 +59,9 @@ function initComponentFolder(name: string) {
     [
       `import { h, defineComponent } from "vue";`,
       "",
+      `import "./style";`,
       `import { ${smallCamelCase(name)}Props } from "./types";`,
       "",
-      `import "./style/index.scss";`,
       `export default defineComponent({`,
       `  name: "Mo${camelCase(name)}",`,
       `  props: ${smallCamelCase(name)}Props,`,
@@ -78,9 +79,14 @@ function initComponentFolder(name: string) {
     ].join("\n")
   ).to(`packages/components/${name}/${name}.ts`);
 
-  // index.scss
+  // style/index.scss
   new shelljs.ShellString([`.mo-${name} {}`, ""].join("\n")).to(
     `packages/components/${name}/style/index.scss`
+  );
+
+  // style/index.ts
+  new shelljs.ShellString([`import "./index.scss";`, ""].join("\n")).to(
+    `packages/components/${name}/style/index.ts`
   );
 }
 
