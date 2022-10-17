@@ -77,10 +77,10 @@ importers:
 
   docs:
     specifiers:
-      moxui: npm:moxui@latest
+      moxui: workspace:^1.0.1
       vue: ^3.2.36
     dependencies:
-      moxui: 1.0.0_vue@3.2.39
+      moxui: link:../packages/moxui
       vue: 3.2.39
 
   packages/components:
@@ -1988,15 +1988,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dev: true
-
-  /moxui/1.0.0_vue@3.2.39:
-    resolution: {integrity: sha512-iXxCV7KQKRFP3ixTPOHrd0qxc8+2ZGnxZCxF5rVTkyme839GML+oXKuXVUzzU05E22h4bkUEl9Xy3TCbmDpBeA==}
-    peerDependencies:
-      vue: ^3.2.36
-    dependencies:
-      svga.lite: 1.6.1
-      vue: 3.2.39
-    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}

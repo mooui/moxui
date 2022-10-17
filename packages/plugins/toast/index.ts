@@ -105,9 +105,14 @@ function createTypedMethod(type: "loading" | "success" | "warn" | "error") {
   return function (options: string | TypedToastOptions) {
     if (typeof options === "string" || typeof options === "number")
       options = { message: options };
-    const newOptions: ToastOptions = Object.assign({}, options, {
-      type,
-    });
+    const newOptions: ToastOptions = Object.assign(
+      {},
+      options,
+      {
+        type,
+      },
+      type === "loading" ? { duration: 0 } : null
+    );
     return Toast(newOptions);
   };
 }

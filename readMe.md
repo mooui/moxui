@@ -1,33 +1,58 @@
-### 一些配置
-#### .npmrc
-```
-# 依赖包扁平化安装(安装在同一级别)
-shamefully-hoist = true
-```
+# 移动端 Vue3 组件库
 
-#### pnpm-workspace.yaml
-```
-# 关联packages目录和examples目录, 使其能够互相引用
-# packages 存放组件
-# docs     文档/测试代码
-packages:
-  - 'packages/**'
-  - 'docs'
-```
+## 组件-components
+组件均带有Mo前缀
+### button 
+按钮
 
-#### 依赖安装
-添加参数-w, 拍平安装在整个项目根目录下
+### icon 
+svg图标, loading success error warn   
+主要用于toast
 
-#### 内部依赖使用install
-```
-# 如在examples内
-# 失败
-pnpm add mooui
-# 成功
-pnpm install mooui
-```
+### marquee
+跑马灯
 
-#### 开源协议 
-```
-"license": "MIT",
-```
+### picker
+选择器
+
+### popup
+弹窗遮罩
+
+### sms-code 
+验证码输入框
+
+### sticky
+粘性顶栏
+
+### svga
+svga动画播放
+
+
+## 插件-plugins
+
+### loading
+页面初始化加载 loading
+
+### toast
+提示
+
+
+## hooks
+
+### use-count-down 
+倒计时
+
+### use-lock-scroll
+禁止滚动, 多用于弹窗
+
+### use-network-check
+网络检查
+
+### use-outter-click
+外部点击
+
+### use-touch
+触摸行为
+
+### use-visibility-change
+页面可见性变化

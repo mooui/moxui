@@ -1,5 +1,10 @@
 @import './font/DIN-Bold/DIN-Bold.css';
 
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
 a,button{
   text-decoration: none;
   -webkit-touch-callout: none;
@@ -7,9 +12,6 @@ a,button{
 }
 a:active,button:active{
   opacity: .5;
-}
-*{
-  box-sizing: border-box;
 }
 .mo-overflow-hidden{
   overflow:hidden !important;
