@@ -23,7 +23,7 @@ export default defineComponent({
   name: "MoSvga",
   props: svgaProps,
   emits: ["start", "pause", "stop", "end", "clear", "process"],
-  setup(props, { emit, expose, attrs }) {
+  setup(props, { emit, expose }) {
     const isReady = ref(false);
     const isShowSVGA = ref(false);
     const player = ref<Player>();
@@ -158,7 +158,6 @@ export default defineComponent({
             display: isShow.value ? "block" : "none",
             ...style.value,
           },
-          ...attrs,
         },
         isSVGA.value
           ? h("canvas", {

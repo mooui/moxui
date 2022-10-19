@@ -2,9 +2,9 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import PostcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 
-
 export default defineConfig({
   assetsInclude: ["**/*.svga"],
+  publicDir: "public",
   css: {
     postcss: {
       plugins: [
@@ -25,6 +25,11 @@ export default defineConfig({
         charset: false,
       },
     },
+  },
+  server: {
+    host: "0.0.0.0",
+    port: 3000,
+    hmr: true,
   },
   plugins: [vue()],
 });

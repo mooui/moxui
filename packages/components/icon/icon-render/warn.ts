@@ -10,7 +10,7 @@ function renderWarnIcon(baseClass: string, options: IconOptions) {
         viewBox: "0 0 400 400",
         width: options.size,
         height: options.size,
-        class: [baseClass + "__warn", { animate: animate.value }],
+        class: [baseClass, baseClass + "__warn", { animate: animate.value }],
       },
       [
         h("circle", {

@@ -1,5 +1,5 @@
 {
-  "name": "@mooui/play",
+  "name": "@moxui/play",
   "private": true,
   "scripts": {
     "dev": "vite",

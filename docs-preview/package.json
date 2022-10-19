@@ -10,7 +10,8 @@
   "author": "Liqun",
   "license": "MIT",
   "dependencies": {
-    "moxui": "workspace:^1.0.1",
-    "vue": "^3.2.36"
+    "moxui": "^1.0.2",
+    "vue": "^3.2.36",
+    "vue-router": "^4.1.5"
   }
 }

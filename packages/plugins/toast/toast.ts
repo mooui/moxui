@@ -19,7 +19,7 @@ export default defineComponent({
   name: "MoToast",
   props: toastProps,
   emits: ["closed"],
-  setup(props, { emit, attrs }) {
+  setup(props, { emit }) {
     // 图标
     const icon = computed(() => {
       if (props.type || props.icon) {
@@ -163,7 +163,6 @@ export default defineComponent({
                 {
                   class: baseClass,
                   style: style.value,
-                  ...attrs,
                 },
                 renderContent()
               )

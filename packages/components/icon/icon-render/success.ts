@@ -11,7 +11,7 @@ function renderSuccessIcon(baseClass: string, options: IconOptions) {
         viewBox: "0 0 400 400",
         width: options.size,
         height: options.size,
-        class: [baseClass + "__success", { animate: animate.value }],
+        class: [baseClass, baseClass + "__success", { animate: animate.value }],
       },
       [
         h("circle", {

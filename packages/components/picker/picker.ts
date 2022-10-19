@@ -10,7 +10,7 @@ export default defineComponent({
   name: "MoPicker",
   props: pickerProps,
   emits: ["cancel", "confirm", "change"],
-  setup(props, { emit, expose, attrs }) {
+  setup(props, { emit, expose }) {
     const type = computed(() => {
       const item = props.columns[0];
       if (typeof item === "string" || typeof item === "number") {
@@ -220,7 +220,6 @@ export default defineComponent({
         "div",
         {
           class: baseClass,
-          ...attrs,
         },
         [
           renderToolbar(),

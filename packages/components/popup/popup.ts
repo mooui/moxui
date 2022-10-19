@@ -24,7 +24,7 @@ export default defineComponent({
   name: "MoPopup",
   props: popupProps,
   emits: ["update:show", "close", "closed", "open", "opened"],
-  setup(props, { emit, slots, attrs }) {
+  setup(props, { emit, slots }) {
     const zIndex = ref(1);
     let opened = false;
     let shouldReopen = false;
@@ -208,7 +208,6 @@ export default defineComponent({
                           zIndex: zIndex.value,
                           ...popupStyle.value,
                         },
-                        ...attrs,
                       },
                       slots.default?.()
                     ),

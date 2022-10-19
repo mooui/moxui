@@ -65,6 +65,9 @@ function release() {
   shelljs.exec("pnpm build");
   shelljs.cd("dist/moxui");
   shelljs.exec("pnpm publish --access public --no-git-check");
+
+  shelljs.cd("../../docs");
+  shelljs.exec("pnpm upgrade moxui");
 }
 
 const newVersion = getNewVersion(version);

@@ -14,8 +14,8 @@ export default defineConfig({
     alias: [
       // {
       //   find: /^moxui$/,
-      //   replacement: path.resolve('../packages/moxui', 'index.ts'),
-      // }
+      //   replacement: "@moxui/moxui",
+      // },
     ],
   },
   assetsInclude: ["**/*.svga"],

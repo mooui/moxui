@@ -1,14 +1,12 @@
 .mo-button {
   outline: none;
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   line-height: 36px;
   font-size: 30px;
   font-weight: 600;
   color:#2C2C2C;
   border-radius: 100px;
+  cursor: pointer;
   &__confirm{
     background-color: #FFE034;
   }

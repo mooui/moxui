@@ -19,7 +19,7 @@ export default defineComponent({
   name: "MoMarquee",
   props: marqueeProps,
   emits: ["scrollEnd"], // 一轮滚动结束
-  setup(props, { emit, slots, attrs }) {
+  setup(props, { emit, slots }) {
     const data = reactive({
       marqueeSize: 0, // 容器宽/高  根据props.direction
       contentSize: 0, // 滚动内容宽/高
@@ -219,7 +219,6 @@ export default defineComponent({
           class: baseClass,
           style: marqueeStyle.value,
           ref: marquee,
-          ...attrs,
         },
         h(
           "div",

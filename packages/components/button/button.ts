@@ -1,4 +1,4 @@
-import { h, defineComponent, computed } from "vue";
+import { h, defineComponent, computed, mergeProps } from "vue";
 
 import "./style";
 import { buttonProps } from "./types";
@@ -8,7 +8,7 @@ import { pxToVw } from "@moxui/utils/utils";
 export default defineComponent({
   name: "MoButton",
   props: buttonProps,
-  setup(props, { slots, attrs }) {
+  setup(props, { slots }) {
     const buttonTxt = computed(() => {
       return props.txt ? props.txt : props.type === "confirm" ? "确认" : "取消";
     });
@@ -45,7 +45,6 @@ export default defineComponent({
           ],
           style: buttonStyle.value,
           disabled: props.disabled,
-          ...attrs,
         },
         slots.default ? slots.default() : buttonTxt.value
       );

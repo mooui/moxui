@@ -10,7 +10,11 @@ function renderLoadingIcon(baseClass: string, options: IconOptions) {
         viewBox: "0 0 400 400",
         width: options.size,
         height: options.size,
-        class: [baseClass + "__loading", { animate: options.animate }],
+        class: [
+          baseClass,
+          baseClass + "__loading",
+          { animate: options.animate },
+        ],
       },
       h("circle", {
         class: baseClass + "__loading-circle",

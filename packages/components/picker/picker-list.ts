@@ -16,7 +16,7 @@ export default defineComponent({
   name: "MoPickerList",
   props: pickerListProps,
   emits: ["update:currentIndex", "change"],
-  setup(props, { emit, expose, attrs }) {
+  setup(props, { emit }) {
     let changed = false;
     // #region 触摸滚动
     let startOffset: number;
@@ -108,7 +108,6 @@ export default defineComponent({
           onTouchmove: onTouchMove,
           onTouchend: onTouchEnd,
           onTouchcancel: onTouchEnd,
-          ...attrs,
         },
         [
           h("div", {
