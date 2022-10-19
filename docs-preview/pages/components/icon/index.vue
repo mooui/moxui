@@ -2,7 +2,7 @@
   <div class="page">
     <div class="header">
       <div class="header-content">
-        <router-link to="./" class="back"></router-link>
+        <router-link to="/index" class="back"></router-link>
         <h2 class="title">ICON</h2>
       </div>
     </div>
@@ -24,10 +24,21 @@
     </section>
     <section class="code-section">
       <h4 class="code-title">动画 (除loading外, 仅显示时动画一次)</h4>
-      <mo-icon size="60" type="success" animate></mo-icon>
-      <mo-icon size="60" type="error" animate></mo-icon>
-      <mo-icon size="60" type="warn" animate></mo-icon>
-      <mo-icon size="60" type="loading" animate></mo-icon>
+      <mo-button
+        width="150"
+        height="60"
+        color="#fff"
+        background-color="#ff0036"
+        style="margin-right: 10px"
+        @click="toggle"
+        >刷新</mo-button
+      >
+      <template v-if="showAnimate">
+        <mo-icon size="60" type="success" animate></mo-icon>
+        <mo-icon size="60" type="error" animate></mo-icon>
+        <mo-icon size="60" type="warn" animate></mo-icon>
+        <mo-icon size="60" type="loading" animate></mo-icon>
+      </template>
     </section>
     <section class="code-section">
       <h4 class="code-title">切换</h4>
@@ -36,8 +47,8 @@
         width="150"
         height="60"
         color="#fff"
-        class="change-button"
         background-color="#ff0036"
+        style="margin-left: 15px"
         @click="changeType"
         >切换</mo-button
       >
@@ -45,7 +56,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, nextTick } from "vue";
 
 import { MoIcon, MoButton } from "moxui";
 
@@ -54,12 +65,16 @@ const types = ["success", "warn", "error", "loading"];
 function changeType() {
   type.value = types[(types.indexOf(type.value) + 1) % types.length];
 }
+
+const showAnimate = ref(true);
+function toggle() {
+  showAnimate.value = false;
+  nextTick(() => {
+    showAnimate.value = true;
+  });
+}
 </script>
 <style lang="scss">
-.change-button {
-  margin-left: 20px;
-  vertical-align: middle;
-}
 .code-section:nth-child(6) {
   .mo-icon {
     margin: 0 10px;

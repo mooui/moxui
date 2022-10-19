@@ -66,7 +66,7 @@ function release() {
   shelljs.cd("dist/moxui");
   shelljs.exec("pnpm publish --access public --no-git-check");
 
-  shelljs.cd("../../docs");
+  shelljs.cd("../../docs-preview");
   shelljs.exec("pnpm upgrade moxui");
 }
 

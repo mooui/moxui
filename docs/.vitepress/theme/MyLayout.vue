@@ -10,7 +10,7 @@ const isMobile = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer
 
 const isLocal = /(localhost|192\.168|0\.0|127\.0)/.test(location.href);
 
-const iframeSrc = isLocal ? 'http://127.0.0.1:3000/#/components/button':''
+const iframeSrc = isLocal ? 'http://127.0.0.1:3000/#/index':''
 
 
 // #region router postMessage

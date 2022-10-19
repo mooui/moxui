@@ -34,6 +34,7 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "autoprefixer": "^10.4.8",
     "colors": "^1.4.0",
+    "concurrently": "^7.4.0",
     "cpy": "^9.0.1",
     "eslint": "^8.23.0",
     "eslint-plugin-prettier": "^4.2.1",

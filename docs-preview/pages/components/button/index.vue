@@ -2,7 +2,7 @@
   <div class="page">
     <div class="header">
       <div class="header-content">
-        <router-link to="./" class="back"></router-link>
+        <router-link to="/index" class="back"></router-link>
         <h2 class="title">BUTTON</h2>
       </div>
     </div>

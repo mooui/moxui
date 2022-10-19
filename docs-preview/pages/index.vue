@@ -13,7 +13,7 @@
         <router-link to="/components/button" class="item"
           >Button 按钮</router-link
         >
-        <div class="item">Icon 图标</div>
+        <router-link to="/components/icon" class="item">Icon 图标</router-link>
         <div class="item">Marquee 跑马灯</div>
         <div class="item">Picker 选择器</div>
         <div class="item">Popup 遮罩</div>
