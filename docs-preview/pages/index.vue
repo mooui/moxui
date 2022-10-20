@@ -23,7 +23,9 @@
         <router-link to="/components/popup" class="item"
           >Popup 遮罩</router-link
         >
-        <div class="item">SmsCode 验证码输入</div>
+        <router-link to="/components/sms-code" class="item"
+          >SmsCode 验证码输入</router-link
+        >
         <div class="item">Stikcy 吸顶组件</div>
         <div class="item">Svga Svga动画播放</div>
       </div>

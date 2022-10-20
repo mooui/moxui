@@ -46,7 +46,7 @@ import { MoButton } from 'moxui';
 | 参数 | 说明	| 类型 | 默认值 |
 | :--- | :--- | :--- | :--- |
 | ```type``` | 按钮类型, 可选 ```confirm``` ```cancel``` | ```string``` | ```confirm``` |
-| ```size``` | 按钮大小, 可选 ```normal``` ```large``` , 会被 ```width``` ```height``` 属性覆盖 | ```string``` | ```normal``` |
+| ```size``` | 按钮大小, 可选 ```normal``` ```large``` ```small``` , 会被 ```width``` ```height``` 属性覆盖 | ```string``` | ```normal``` |
 | ```txt``` | 按钮内文字, 优先级低于 ```default slot``` | ```string``` |  |
 | ```width``` | 按钮宽度, 可设置px vw | ```string```  ```number```  |  |
 | ```height``` | 按钮高度, 可设置px vw | ```string```  ```number``` |  |

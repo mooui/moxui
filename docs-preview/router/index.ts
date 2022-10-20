@@ -6,6 +6,7 @@ const Icon = () => import("../pages/components/icon/index.vue");
 const Marquee = () => import("../pages/components/marquee/index.vue");
 const Picker = () => import("../pages/components/picker/index.vue");
 const Popup = () => import("../pages/components/popup/index.vue");
+const SmsCode = () => import("../pages/components/sms-code/index.vue");
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -39,6 +40,11 @@ const router = createRouter({
       path: "/components/popup",
       name: "popup",
       component: Popup,
+    },
+    {
+      path: "/components/sms-code",
+      name: "sms-code",
+      component: SmsCode,
     },
     {
       path: "/:pathMatch(.*)*",
