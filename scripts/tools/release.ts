@@ -61,15 +61,20 @@ function upgradeVersion(version: string) {
   ]);
 }
 
-function release() {
+function release(newVersion: string) {
   shelljs.exec("pnpm build");
   shelljs.cd("dist/moxui");
   shelljs.exec("pnpm publish --access public --no-git-check");
 
   shelljs.cd("../../docs-preview");
   shelljs.exec("pnpm upgrade moxui");
+
+  shelljs.cd("../");
+  shelljs.exec("git add .");
+  shelljs.exec(`git commit -m "moxui: release ${newVersion}"`);
+  shelljs.exec(`git push`);
 }
 
 const newVersion = getNewVersion(version);
 upgradeVersion(newVersion);
-release();
+release(newVersion);
