@@ -7,6 +7,8 @@ const Marquee = () => import("../pages/components/marquee/index.vue");
 const Picker = () => import("../pages/components/picker/index.vue");
 const Popup = () => import("../pages/components/popup/index.vue");
 const SmsCode = () => import("../pages/components/sms-code/index.vue");
+const Sticky = () => import("../pages/components/sticky/index.vue");
+const Svga = () => import("../pages/components/svga/index.vue");
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -45,6 +47,16 @@ const router = createRouter({
       path: "/components/sms-code",
       name: "sms-code",
       component: SmsCode,
+    },
+    {
+      path: "/components/sticky",
+      name: "sticky",
+      component: Sticky,
+    },
+    {
+      path: "/components/svga",
+      name: "svga",
+      component: Svga,
     },
     {
       path: "/:pathMatch(.*)*",

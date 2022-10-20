@@ -26,8 +26,12 @@
         <router-link to="/components/sms-code" class="item"
           >SmsCode 验证码输入</router-link
         >
-        <div class="item">Stikcy 吸顶组件</div>
-        <div class="item">Svga Svga动画播放</div>
+        <router-link to="/components/sticky" class="item"
+          >Stikcy 吸顶组件</router-link
+        >
+        <router-link to="/components/svga" class="item"
+          >Svga Svga动画播放</router-link
+        >
       </div>
     </div>
   </div>
