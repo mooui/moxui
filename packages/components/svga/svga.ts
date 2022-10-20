@@ -82,8 +82,9 @@ export default defineComponent({
               emit("stop", player.value);
             })
             .$on("end" as EVENT_TYPES.END, () => {
-              clear();
-              isShowSVGA.value = false;
+              if (props.clearOnEnd) {
+                clear();
+              }
               emit("end", player.value);
             })
             .$on("clear" as EVENT_TYPES.CLEAR, () => {

@@ -9,7 +9,7 @@ export const svgaProps = {
   // 循环次数 0 - 无限循环
   loopTimes: {
     type: Number,
-    default: 1,
+    default: 0,
   },
   width: {
     type: [Number, String],
@@ -19,6 +19,14 @@ export const svgaProps = {
     type: [Number, String],
     default: "100%",
   },
+  clearOnEnd: Boolean,
+};
+
+export type SvgaInstance = {
+  start: () => {};
+  stop: () => {};
+  pause: () => {};
+  clear: () => {};
 };
 
 export type SvgaProps = ExtractPropTypes<typeof svgaProps>;
