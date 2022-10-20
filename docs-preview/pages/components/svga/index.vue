@@ -54,7 +54,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import { MoButton, MoSvga, SvgaInstance } from "@moxui/components";
+import { MoButton, MoSvga, SvgaInstance } from "moxui";
 import loadingSvga from "../../../img/loading.svga";
 
 const svga = ref<SvgaInstance>();

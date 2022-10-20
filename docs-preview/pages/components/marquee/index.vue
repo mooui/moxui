@@ -82,10 +82,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, nextTick } from "vue";
-
 import { MoMarquee } from "moxui";
-// import { MoMarquee } from "@moxui/components";
 
 const gifts = [
   {

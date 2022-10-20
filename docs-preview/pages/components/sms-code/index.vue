@@ -20,8 +20,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 
-import { MoSmsCode } from "@moxui/components";
-import { Toast } from "moxui";
+import { MoSmsCode, Toast } from "moxui";
 
 const code = ref("");
 
