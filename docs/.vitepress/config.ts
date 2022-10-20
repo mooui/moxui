@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import {resolve} from "path"
 import { demoBlockPlugin } from "vitepress-theme-demoblock";
 
 function getDemoSidebar() {
@@ -99,4 +100,5 @@ export default defineConfig({
       md.use(demoBlockPlugin)
     }
   },
+  outDir:resolve(__dirname,'../../dist/docs')
 });

@@ -67,7 +67,13 @@ export default defineConfig({
         resolve(__dirname, "./dist/moxui/es"),
         resolve(__dirname, "./dist/moxui/lib"),
       ],
-      exclude: ["types/*.d.ts", "docs/**", "play/**", "node_modules/**"],
+      exclude: [
+        "types/*.d.ts",
+        "docs/**",
+        "docs-preview/**",
+        "play/**",
+        "node_modules/**",
+      ],
       afterBuild() {
         // 构建scss
         buildScss();

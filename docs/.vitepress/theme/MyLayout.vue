@@ -2,28 +2,32 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter } from 'vitepress';
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme';
 
-const { Layout } = DefaultTheme
+const { Layout } = DefaultTheme;
 
-const isMobile = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(navigator.userAgent);
+let ua = '',url = '';
 
-const isLocal = /(localhost|192\.168|0\.0|127\.0)/.test(location.href);
 
-const iframeSrc = isLocal ? 'http://127.0.0.1:3000/#/index':''
+
+
+
 
 
 // #region router postMessage
 const iframe = ref<HTMLIFrameElement>();
 const router = useRouter();
+if(typeof window !== 'undefined'){
+  ua = window.navigator.userAgent;
+  url = window.location.href;
 
-// 父页面接受消息
-window.addEventListener('message', function (event) {
-  console.log(router)
-  if (event.data.type === 'moxui:inner') {
-    router.go(event.data.value === '/index' ? '/' : event.data.value + '/');
-  }
-});
+  // 父页面接受消息
+  window.addEventListener('message', function (event) {
+    if (event.data.type === 'moxui:inner') {
+      router.go(event.data.value === '/index' ? '/' : event.data.value + '/');
+    }
+  });
+}
 
 // 发出消息
 watch(router.route,(val)=>{
@@ -33,9 +37,15 @@ watch(router.route,(val)=>{
       value:/(\/components\/.*\/|\/plugins\/.*\/)/.test(val.path) ? val.path.slice(0,-1) : '/index'
     },"*")
   }
-})
-
+});
 // #endregion
+
+const isMobile = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(ua);
+
+const isLocal = /(localhost|192\.168|0\.0|127\.0)/.test(url);
+
+const iframeSrc = isLocal ? 'http://127.0.0.1:3000/#/index':'/mobile/index.html';
+
 </script>
 
 <template>

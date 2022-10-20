@@ -1,10 +1,12 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 import PostcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 
 export default defineConfig({
   assetsInclude: ["**/*.svga"],
   publicDir: "public",
+  base: "./",
   css: {
     postcss: {
       plugins: [
@@ -30,6 +32,35 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 3000,
     hmr: true,
+  },
+  build: {
+    target: ["es2020", "edge88", "firefox78", "chrome87", "safari13"],
+    reportCompressedSize: false, // 计算文件大小，会影响打包速度
+    cssCodeSplit: true, // css文件分多个
+    assetsInlineLimit: 5 * 1024, // base64编码
+    sourcemap: false,
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true, // 是否删除console
+        drop_debugger: true, // 打包时删除 debugger
+      },
+      output: {
+        // 去掉注释内容
+        comments: true,
+      },
+    },
+    outDir: resolve(__dirname, `../dist/docs/mobile`),
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        dir: resolve(__dirname, `../dist/docs/mobile`),
+        manualChunks: {
+          // 拆分代码，这个就是分包，配置完后自动按需加载
+          vue: ["vue"],
+        },
+      },
+    },
   },
   plugins: [vue()],
 });
