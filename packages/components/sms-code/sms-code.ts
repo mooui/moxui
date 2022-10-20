@@ -7,7 +7,7 @@ export default defineComponent({
   name: "MoSmsCode",
   props: smsCodeProps,
   emits: ["update:modelValue", "finish"],
-  setup(props, { emit, expose }) {
+  setup(props, { emit }) {
     const input = ref<HTMLInputElement>();
     const isFocus = ref(false);
 
@@ -83,7 +83,8 @@ export default defineComponent({
 
                   emit("update:modelValue", value);
                   if (value.length === props.length) {
-                    emit("finish");
+                    emit("finish", value);
+                    input.value?.blur();
                   }
                 },
                 onFocus: () => {
