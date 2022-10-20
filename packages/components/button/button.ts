@@ -18,11 +18,15 @@ export default defineComponent({
         ? pxToVw(props.height)
         : props.size === "large"
         ? pxToVw(100)
+        : props.size === "small"
+        ? pxToVw(60)
         : pxToVw(90);
       const width = props.width
         ? pxToVw(props.width)
         : props.size === "large"
         ? pxToVw(630)
+        : props.size === "small"
+        ? pxToVw(150)
         : pxToVw(330);
       return {
         width,

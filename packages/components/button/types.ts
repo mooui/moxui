@@ -6,7 +6,7 @@ export const buttonProps = {
     default: "confirm",
   },
   size: {
-    type: String as PropType<"normal" | "large">,
+    type: String as PropType<"normal" | "large" | "small">,
     default: "normal",
   },
   txt: String,

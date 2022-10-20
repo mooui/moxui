@@ -14,9 +14,15 @@
           >Button 按钮</router-link
         >
         <router-link to="/components/icon" class="item">Icon 图标</router-link>
-        <div class="item">Marquee 跑马灯</div>
-        <div class="item">Picker 选择器</div>
-        <div class="item">Popup 遮罩</div>
+        <router-link to="/components/marquee" class="item"
+          >Marquee 跑马灯</router-link
+        >
+        <router-link to="/components/picker" class="item"
+          >Picker 选择器</router-link
+        >
+        <router-link to="/components/popup" class="item"
+          >Popup 遮罩</router-link
+        >
         <div class="item">SmsCode 验证码输入</div>
         <div class="item">Stikcy 吸顶组件</div>
         <div class="item">Svga Svga动画播放</div>

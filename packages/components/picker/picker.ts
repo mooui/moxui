@@ -10,7 +10,7 @@ export default defineComponent({
   name: "MoPicker",
   props: pickerProps,
   emits: ["cancel", "confirm", "change"],
-  setup(props, { emit, expose }) {
+  setup(props, { emit, slots }) {
     const type = computed(() => {
       const item = props.columns[0];
       if (typeof item === "string" || typeof item === "number") {
@@ -60,6 +60,7 @@ export default defineComponent({
               if (columns[i].active) {
                 columns = columns[i].children!;
                 currentIndexes.value[index] = i;
+                index++;
                 flag = true;
                 break;
               }
@@ -134,16 +135,24 @@ export default defineComponent({
     const baseClass = "mo-picker";
 
     function emitEvent(type: "cancel" | "confirm" | "change") {
-      const values =
+      const indexes =
         currentIndexes.value.length === 1
           ? currentIndexes.value[0]
           : currentIndexes.value.slice();
-      emit(type, values);
+      const values =
+        currentIndexes.value.length === 1
+          ? normaliseColumns.value[0].values[currentIndexes.value[0]]
+          : currentIndexes.value.slice().map((v, i) => {
+              return normaliseColumns.value[i].values[v];
+            });
+      emit(type, values, indexes);
     }
 
     // 标题栏
     function renderToolbar() {
-      return props.toolbar
+      return slots.toolbar
+        ? slots.toolbar()
+        : props.toolbar
         ? h(
             "div",
             {

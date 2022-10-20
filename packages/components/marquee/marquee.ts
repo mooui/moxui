@@ -63,10 +63,10 @@ export default defineComponent({
           props.scroll === "step" ? "ease-in-out" : "linear",
       };
       if (props.direction === "top") {
-        res["transform"] = `translateY(-${data.distance}px)`;
+        res["transform"] = `translate3d(0,-${data.distance.toFixed(2)}px,0)`;
         res["flex-direction"] = "column";
       } else {
-        res["transform"] = `translateX(-${data.distance}px)`;
+        res["transform"] = `translate3d(-${data.distance.toFixed(2)}px,0,0)`;
         res["flex-wrap"] = "nowrap";
         res["align-items"] = "center";
         res["height"] = "100%";
