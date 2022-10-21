@@ -86,7 +86,7 @@ function Loading(options?: LoadingOptions | boolean | number) {
                   zIndex,
                   width: size,
                   height: size,
-                  definedContainer: !!container,
+                  definedContainer: container !== document.body,
                 },
                 { show: showLoading.value, onClosed }
               )

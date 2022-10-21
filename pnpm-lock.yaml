@@ -91,12 +91,12 @@ importers:
 
   docs-preview:
     specifiers:
-      moxui: ^1.0.9
+      moxui: ^1.0.10
       terser: ^5.15.1
       vue: ^3.2.36
       vue-router: ^4.1.5
     dependencies:
-      moxui: 1.0.9_vue@3.2.41
+      moxui: 1.0.10_vue@3.2.41
       vue: 3.2.41
       vue-router: 4.1.5_vue@3.2.41
     devDependencies:
@@ -2921,6 +2921,16 @@ packages:
     hasBin: true
     dev: true
 
+  /moxui/1.0.10_vue@3.2.41:
+    resolution: {integrity: sha512-eqgNW6sGW32ETx7XzOQZmY45VCeIcq4/PTyc7eCySPN1ty3iYaYiSWYsRFJ7Zx2HBfIrntTWlLH7PJiCCvckmw==}
+    peerDependencies:
+      vue: ^3.2.36
+    dependencies:
+      lodash: 4.17.21
+      svga.lite: 1.6.1
+      vue: 3.2.41
+    dev: false
+
   /moxui/1.0.2_vue@3.2.39:
     resolution: {integrity: sha512-8RzO3a1dRFKY+UDUP87QEEStCp0atSqElLQNcwG1RunK4xH1pcr3ljPpY4AZ9HBdRkhM6mM0iTcZejnPCkqEmQ==}
     peerDependencies:
@@ -2929,16 +2939,6 @@ packages:
       lodash: 4.17.21
       svga.lite: 1.6.1
       vue: 3.2.39
-    dev: false
-
-  /moxui/1.0.9_vue@3.2.41:
-    resolution: {integrity: sha512-4pvTmthMICwJd5XJc+PqvRvDAjrbRSKpDirFxo5jy/4ezLxmqG6/I2u5s4yYeRTp4XE6Q080oGCi/3IldjeEJA==}
-    peerDependencies:
-      vue: ^3.2.36
-    dependencies:
-      lodash: 4.17.21
-      svga.lite: 1.6.1
-      vue: 3.2.41
     dev: false
 
   /mrmime/1.0.1:
