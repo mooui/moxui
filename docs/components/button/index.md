@@ -32,6 +32,10 @@ import { MoButton } from 'moxui';
 ```
 <mo-button type="cancel">取消</mo-button>
 ```
+**success**
+```
+<mo-button type="success">取消</mo-button>
+```
 **large**
 ```
 <mo-button size="large">LARGE</mo-button>

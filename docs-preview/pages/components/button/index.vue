@@ -14,6 +14,10 @@
       <h4 class="code-title">取消</h4>
       <mo-button type="cancel">取消</mo-button>
     </section>
+    <section class="code-section" style="background-color: #f1f1f1">
+      <h4 class="code-title">success</h4>
+      <mo-button type="success">success</mo-button>
+    </section>
     <section class="code-section">
       <h4 class="code-title">large</h4>
       <mo-button size="large">LARGE</mo-button>

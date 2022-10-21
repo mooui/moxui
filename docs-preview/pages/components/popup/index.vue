@@ -60,6 +60,7 @@
       >
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup3 = true) && (animation = 'top')"
         >top</mo-button
       >

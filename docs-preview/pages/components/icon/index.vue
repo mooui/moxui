@@ -25,10 +25,8 @@
     <section class="code-section">
       <h4 class="code-title">动画 (除loading外, 仅显示时动画一次)</h4>
       <mo-button
-        width="150"
-        height="60"
-        color="#fff"
-        background-color="#ff0036"
+        size="small"
+        type="success"
         style="margin-right: 10px"
         @click="toggle"
         >刷新</mo-button
@@ -44,10 +42,8 @@
       <h4 class="code-title">切换</h4>
       <mo-icon size="60" :type="type" animate></mo-icon>
       <mo-button
-        width="150"
-        height="60"
-        color="#fff"
-        background-color="#ff0036"
+        size="small"
+        type="success"
         style="margin-left: 15px"
         @click="changeType"
         >切换</mo-button

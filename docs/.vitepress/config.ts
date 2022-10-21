@@ -57,8 +57,19 @@ function getDemoSidebar() {
       ],
     },
     {
-      text: "布局组件",
-      items:[]
+      text: "Plugins插件",
+      collapsible: true,
+      collapsed:false,
+      items: [
+        {
+          text: "Loading 加载遮罩",
+          link: "/plugins/loading/"
+        },
+        {
+          text: "Toast 提示",
+          link: "/plugins/toast/"
+        },
+      ],
     },
   ]
 }

@@ -34,6 +34,15 @@
         >
       </div>
     </div>
+    <div class="content">
+      <div class="tit">插件 Plugins</div>
+      <div class="list">
+        <router-link to="/plugins/loading" class="item"
+          >Loading 加载遮罩</router-link
+        >
+        <router-link to="/plugins/toast" class="item">Toast 提示</router-link>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup></script>
@@ -61,7 +70,7 @@
   }
 
   .content {
-    padding: 50px;
+    padding: 50px 50px 0;
     .tit {
       margin-bottom: 15px;
       padding-left: 20px;
