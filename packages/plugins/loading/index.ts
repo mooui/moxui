@@ -6,11 +6,13 @@ import loading from "./loading";
 
 let ins: any = null;
 let timer: ReturnType<typeof setTimeout>;
-function Loading(options?: LoadingOptions | boolean) {
+function Loading(options?: LoadingOptions | boolean | number) {
   if (typeof options === "boolean") {
     options = {
       show: options,
     };
+  } else if (typeof options === "number") {
+    options = { duration: options };
   } else if (!options) {
     options = {};
   }
