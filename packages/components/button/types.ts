@@ -2,7 +2,7 @@ import type { ExtractPropTypes, PropType } from "vue";
 
 export const buttonProps = {
   type: {
-    type: String as PropType<"confirm" | "cancel">,
+    type: String as PropType<"confirm" | "cancel" | "success">,
     default: "confirm",
   },
   size: {
