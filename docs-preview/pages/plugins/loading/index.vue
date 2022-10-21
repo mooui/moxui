@@ -28,8 +28,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import { Loading } from "@moxui/plugins";
-import { MoButton } from "moxui";
+import { MoButton, Loading } from "moxui";
 
 function func1() {
   Loading();
@@ -47,6 +46,7 @@ function func2() {
 }
 const container = ref<HTMLElement>();
 function func3() {
+  console.log(container.value);
   Loading({
     duration: 2500,
     container: container.value,
