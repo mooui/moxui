@@ -33,7 +33,7 @@ export default defineComponent({
       } else {
         shouldSticky.value = false;
       }
-    }, 50);
+    }, 15);
 
     watch(shouldSticky, (val) => {
       if (val) {
