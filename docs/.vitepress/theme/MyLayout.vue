@@ -8,12 +8,6 @@ const { Layout } = DefaultTheme;
 
 let ua = '',url = '';
 
-
-
-
-
-
-
 // #region router postMessage
 const iframe = ref<HTMLIFrameElement>();
 const router = useRouter();
@@ -45,27 +39,23 @@ const isMobile = /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer
 const isLocal = /(localhost|192\.168|0\.0|127\.0)/.test(url);
 
 const iframeSrc = isLocal ? 'http://127.0.0.1:3000/#/index':'/mobile/index.html';
-
 </script>
 
 <template>
   <template v-if="!isMobile">
     <Layout>
-    <template #layout-bottom>
-      <div class="iframe-container">
-        <iframe :src="iframeSrc" frameborder="0" ref="iframe"></iframe>
-      </div>
-    </template>
-  </Layout>
-  <!-- <teleport to=".VPDoc .container">
-    <div class="iframe-container">
-      <iframe :src="iframeSrc" frameborder="0"></iframe>
-    </div>
-  </teleport> -->
+      <template #layout-bottom>
+        <div class="iframe-container">
+          <iframe :src="iframeSrc" frameborder="0" ref="iframe"></iframe>
+        </div>
+      </template>
+    </Layout>
   </template>
 
-  <div class="iframe-container-mobile" v-else>
-    <iframe :src="iframeSrc" frameborder="0"></iframe>
+  <div v-else>
+    <div class="iframe-container-mobile">
+      <iframe :src="iframeSrc" frameborder="0"></iframe>
+    </div>
   </div>
 </template>
 

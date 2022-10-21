@@ -1,8 +1,8 @@
 # MOXUI
 
 ## 介绍
-基于vue3的移动端组件库
-
+基于vue3的移动端组件库   
+[npm地址](https://www.npmjs.com/package/moxui)
 
 ## 安装使用
 ```

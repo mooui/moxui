@@ -69,7 +69,8 @@ export default defineConfig({
   description: "A vue3 UI framework for mobile",
   lang: "zh-cn",
   head:[
-    ["link",{rel:'icon',href:"../assets/logo-icon.png"}]
+    ["link",{rel:'icon',type:"image/png",href:"/logo-icon.png"}],
+    ['link', { rel: "shortcut icon", href: "/favicon.ico"}],
   ],
   themeConfig: {
     // 展示搜索框
@@ -81,7 +82,7 @@ export default defineConfig({
     //     faeFilters: ["tags:guide,api"]
     //   }
     // },
-    logo:"../assets/logo.png",
+    logo:"/logo.png",
     nav: [
       {
         text: "首页",
