@@ -8,28 +8,36 @@
     </div>
     <section class="code-section">
       <h4 class="code-title">基础用法</h4>
-      <mo-button size="small" @click="showPopup1 = true">打开</mo-button>
+      <mo-button size="small" type="success" @click="showPopup1 = true"
+        >打开</mo-button
+      >
       <mo-popup v-model:show="showPopup1" mask-click-close>
         <div class="content1">弹窗内容</div>
       </mo-popup>
     </section>
     <section class="code-section">
       <h4 class="code-title">弹出位置</h4>
-      <mo-button size="small" @click="(showPopup2 = true) && (position = 'top')"
+      <mo-button
+        size="small"
+        type="success"
+        @click="(showPopup2 = true) && (position = 'top')"
         >top</mo-button
       >
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup2 = true) && (position = 'right')"
         >right</mo-button
       >
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup2 = true) && (position = 'bottom')"
         >bottom</mo-button
       >
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup2 = true) && (position = 'left')"
         >left</mo-button
       >
@@ -45,16 +53,19 @@
       <h4 class="code-title">弹出动画</h4>
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup3 = true) && (animation = 'fade')"
         >fade</mo-button
       >
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup3 = true) && (animation = 'zoom')"
         >zoom</mo-button
       >
       <mo-button
         size="small"
+        type="success"
         @click="(showPopup3 = true) && (animation = 'zoom-fade')"
         >zoom-fade</mo-button
       >

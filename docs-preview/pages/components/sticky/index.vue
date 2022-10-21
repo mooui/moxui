@@ -21,7 +21,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { MoSticky } from "moxui";
+import { MoSticky } from "@moxui/components";
 </script>
 <style lang="scss">
 .page-sticky {

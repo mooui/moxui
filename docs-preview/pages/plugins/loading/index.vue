@@ -20,11 +20,16 @@
       <h4 class="code-title">配置</h4>
       <mo-button size="small" type="success" @click="func2">配置</mo-button>
     </section>
+    <section ref="container" class="code-section">
+      <h4 class="code-title">指定容器</h4>
+      <mo-button size="small" type="success" @click="func3">指定容器</mo-button>
+    </section>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import { Loading, MoButton } from "moxui";
+import { Loading } from "@moxui/plugins";
+import { MoButton } from "moxui";
 
 function func1() {
   Loading();
@@ -38,6 +43,13 @@ function func2() {
     duration: 4000,
     zIndex: 1000,
     backgroundColor: "rgba(0,100,0,.1)",
+  });
+}
+const container = ref<HTMLElement>();
+function func3() {
+  Loading({
+    duration: 2500,
+    container: container.value,
   });
 }
 </script>

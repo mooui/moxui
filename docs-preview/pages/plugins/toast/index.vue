@@ -144,9 +144,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
-import { MoButton } from "@moxui/components";
-import { Toast } from "@moxui/plugins";
+import { MoButton, Toast } from "moxui";
 
 import helpIcon from "../../../img/help.png";
 
