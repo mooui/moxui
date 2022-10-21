@@ -1,4 +1,4 @@
-import { App, isRef, Ref } from "vue";
+import { App } from "vue";
 import { mergeProps, createVNode, ref } from "vue";
 import { mountComponent, getGlobalZIndex, designSize } from "@moxui/utils";
 import { LoadingOptions } from "./types";
@@ -7,7 +7,6 @@ import loading from "./loading";
 const CONTAINERCLASS = "mo-relative-hide";
 
 const instances: Set<any> = new Set();
-let timer: ReturnType<typeof setTimeout>;
 const containerMap = new WeakMap<HTMLElement, any>();
 
 // 获取容器信息
@@ -43,6 +42,7 @@ function getContainerInfo(container?: string | HTMLElement | null) {
 function close(container: HTMLElement) {
   const ins = containerMap.get(container);
   if (ins) {
+    ins.timer && clearTimeout(ins.timer);
     ins.close();
   }
 }
@@ -105,15 +105,15 @@ function Loading(options?: LoadingOptions | boolean | number) {
       containerMap.set(container, (ins = instance));
       instances.add(instance);
     }
-    timer && clearTimeout(timer);
+    ins.timer && clearTimeout(ins.timer);
 
     if (duration) {
-      timer = setTimeout(() => {
+      ins.timer = setTimeout(() => {
         ins?.close();
       }, duration);
     }
     return function close() {
-      clearTimeout(timer);
+      clearTimeout(ins.timer);
       ins?.close();
     };
   }
