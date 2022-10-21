@@ -10,7 +10,10 @@ const defaultOptions: ToastOptions = {
   transitionDuration: 500,
   type: void 0,
   icon: void 0,
+  mask: void 0,
   iconPosition: void 0,
+  zIndex: void 0,
+  forbidClick: void 0,
 };
 
 let duration = 2500;
@@ -85,6 +88,8 @@ function Toast(options: false | string | number | ToastOptions) {
     if (typeof options.duration === "number") {
       dur = options.duration;
       delete options.duration;
+    } else if (options.type === "loading" || options.icon === "loading") {
+      dur = 0;
     } else {
       dur = duration;
     }
@@ -105,14 +110,9 @@ function createTypedMethod(type: "loading" | "success" | "warn" | "error") {
   return function (options: string | TypedToastOptions) {
     if (typeof options === "string" || typeof options === "number")
       options = { message: options };
-    const newOptions: ToastOptions = Object.assign(
-      {},
-      options,
-      {
-        type,
-      },
-      type === "loading" ? { duration: 0 } : null
-    );
+    const newOptions: ToastOptions = Object.assign({}, options, {
+      type,
+    });
     return Toast(newOptions);
   };
 }
