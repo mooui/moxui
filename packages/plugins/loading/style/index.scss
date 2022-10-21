@@ -8,10 +8,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-
+  &.mo-loading__absolute{
+    position: absolute;
+  }
   &__svga {
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    width: 50%;
+    height: 50%;
   }
 }
 

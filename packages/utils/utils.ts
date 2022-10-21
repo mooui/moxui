@@ -36,6 +36,17 @@ function realSize(size: number | string, baseWidth: number = 750) {
   }
 }
 
+// 以元素实际尺寸获取设计尺寸(750px设计稿)
+function designSize(size: number | string, designWidth = 750) {
+  if (typeof size === "number" || /\d+(px)?$/.test(size)) {
+    return Math.round((parseFloat("" + size) / clientWidth) * designWidth);
+  } else if (/vw$/.test(size)) {
+    size = parseFloat(size);
+    return Math.round((size * designWidth) / 100);
+  } else {
+    return 0;
+  }
+}
 let gloalZIndex = 2000;
 function getGlobalZIndex() {
   return gloalZIndex++;
@@ -44,4 +55,11 @@ function setGlobalZIndex(index: number) {
   gloalZIndex = index;
 }
 
-export { pxToVw, realSize, clientWidth, getGlobalZIndex, setGlobalZIndex };
+export {
+  pxToVw,
+  realSize,
+  designSize,
+  clientWidth,
+  getGlobalZIndex,
+  setGlobalZIndex,
+};

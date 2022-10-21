@@ -1,17 +1,21 @@
 import { createApp, Component } from "vue";
 
 // 挂载组件
-function mountComponent(RootComponent: Component) {
+function mountComponent(
+  RootComponent: Component,
+  container?: HTMLElement | null
+) {
   const app = createApp(RootComponent);
   const root = document.createElement("div");
+  container = container || document.body;
 
-  document.body.appendChild(root);
+  container.appendChild(root);
 
   return {
     instance: app.mount(root),
     unmount() {
       app.unmount();
-      document.body.removeChild(root);
+      container!.removeChild(root);
     },
   };
 }

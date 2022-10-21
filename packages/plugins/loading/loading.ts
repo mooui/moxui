@@ -1,5 +1,6 @@
 import { h, defineComponent, Transition } from "vue";
 import { MoSvga } from "@moxui/components/svga";
+import { pxToVw } from "@moxui/utils/utils";
 import loadingSvga from "./assets/loading.svga";
 
 import "./style";
@@ -25,7 +26,10 @@ export default defineComponent({
             return h(
               "div",
               {
-                class: baseClass,
+                class: [
+                  baseClass,
+                  { [baseClass + "__absolute"]: props.definedContainer },
+                ],
                 style: {
                   backgroundColor: props.backgroundColor,
                   zIndex: props.zIndex,
@@ -33,12 +37,16 @@ export default defineComponent({
               },
               h(
                 "div",
-                { class: baseClass + "__svga" },
+                {
+                  class: baseClass + "__svga",
+                  style: {
+                    width: pxToVw(props.width || 200),
+                    height: pxToVw(props.height || 200),
+                  },
+                },
                 h(MoSvga, {
                   file: loadingSvga,
                   loopTimes: 0,
-                  width: 200,
-                  height: 200,
                 })
               )
             );
