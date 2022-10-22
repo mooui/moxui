@@ -4,7 +4,8 @@
   "workspaces": [
     "packages/*",
     "play",
-    "docs"
+    "docs",
+    "docs-preview"
   ],
   "scripts": {
     "build": "vite build",

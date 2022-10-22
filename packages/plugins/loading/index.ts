@@ -57,9 +57,10 @@ function Loading(options?: LoadingOptions | boolean | number) {
   } else if (!options) {
     options = {};
   }
-  const { show = true, duration, backgroundColor } = options;
-  const zIndex = options.zIndex || getGlobalZIndex();
   const { container, size } = getContainerInfo(options.container);
+  const definedContainer = container !== document.body;
+  const { show = true, duration, backgroundColor } = options;
+  const zIndex = options.zIndex || definedContainer ? 100 : getGlobalZIndex();
   if (!show) {
     close(container);
     return () => {};
@@ -71,7 +72,7 @@ function Loading(options?: LoadingOptions | boolean | number) {
         {
           render() {
             function onClosed() {
-              if (container && container !== document.body) {
+              if (definedContainer) {
                 container.classList.remove(CONTAINERCLASS);
               }
               instances.delete(instance);
@@ -86,7 +87,7 @@ function Loading(options?: LoadingOptions | boolean | number) {
                   zIndex,
                   width: size,
                   height: size,
-                  definedContainer: container !== document.body,
+                  definedContainer,
                 },
                 { show: showLoading.value, onClosed }
               )

@@ -278,6 +278,7 @@ const showPicker = ref(false);
   }
 }
 .picker-wrapper {
+  overflow: auto;
   width: 100vw;
   background-color: #fff;
   border-radius: 20px 20px 0 0;

@@ -12,10 +12,10 @@ export default defineConfig({
   },
   resolve: {
     alias: [
-      // {
-      //   find: /^moxui$/,
-      //   replacement: "@moxui/moxui",
-      // },
+      {
+        find: /^moxui$/,
+        replacement: path.resolve(__dirname, "../packages/moxui/index"),
+      },
     ],
   },
   assetsInclude: ["**/*.svga"],

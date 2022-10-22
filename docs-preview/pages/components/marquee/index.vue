@@ -60,7 +60,7 @@
           scroll="step"
           :speed="650"
           scroll-behavior="scroll"
-          step-distance="300"
+          :step-distance="300"
         >
           <div class="message">向左步跳滚动消息1</div>
           <div class="message">向左步跳滚动消息2</div>
@@ -71,7 +71,7 @@
           scroll="step"
           direction="top"
           :speed="150"
-          step-distance="50"
+          :step-distance="50"
           scroll-behavior="scroll"
         >
           <div class="message">向上步跳滚动消息1</div>
