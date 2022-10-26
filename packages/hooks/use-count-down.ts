@@ -72,9 +72,9 @@ function useCountDown(
       return;
     }
     if (init) {
-      dateDiff = time - Math.round(Date.now());
+      dateDiff = time + Math.round(Date.now() / 1000);
     } else {
-      time = Math.max(dateDiff + Math.round(Date.now()), 0);
+      time = Math.max(dateDiff - Math.round(Date.now() / 1000), 0);
     }
     current.total = time;
     current.days = Math.floor(time / (24 * 60 * 60));
@@ -86,11 +86,9 @@ function useCountDown(
     current.seconds = time % 60;
   }
 
-  function start(isRestart?: boolean) {
+  function start() {
     countTimer && clearTimeout(countTimer);
-    if (isRestart) {
-      initCurrent(current.total);
-    }
+    initCurrent(current.total, true);
     if (current.total > 0) {
       isCounting = true;
       shouldRestart = false;
@@ -127,10 +125,11 @@ function useCountDown(
 
   function reset(time: number = 0, startCount: boolean = true, intv?: number) {
     countTimer && clearTimeout(countTimer);
-    initCurrent(time, true);
     if (intv) interval = intv;
     if (startCount) {
       start();
+    } else {
+      initCurrent(time);
     }
   }
 
@@ -141,7 +140,7 @@ function useCountDown(
 
   onActivated(() => {
     if (shouldRestart) {
-      start(true);
+      start();
     }
   });
   onDeactivated(() => {

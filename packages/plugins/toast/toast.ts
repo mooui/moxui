@@ -136,7 +136,6 @@ export default defineComponent({
             ? true
             : false
           : props.forbidClick;
-      console.log(forbidClick);
       return h(
         Transition,
         {
