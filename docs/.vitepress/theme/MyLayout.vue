@@ -26,9 +26,9 @@ if(typeof window !== 'undefined'){
 // 发出消息
 watch(router.route,(val)=>{
   if(iframe.value){
-    iframe.value.contentWindow.postMessage({
+    iframe.value?.contentWindow?.postMessage({
       type:"moxui:outter",
-      value:/(\/components\/.*\/|\/plugins\/.*\/)/.test(val.path) ? val.path.slice(0,-1) : '/index'
+      value:/(\/components\/.*\/|\/plugins\/.*\/|\/hooks\/.*\/)/.test(val.path) ? val.path.slice(0,-1) : '/index'
     },"*")
   }
 });

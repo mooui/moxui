@@ -71,6 +71,25 @@ function getDemoSidebar() {
         },
       ],
     },
+    {
+      text: "组合式API",
+      collapsible: true,
+      collapsed:false,
+      items: [
+        {
+          text: "useCountDown 倒计时",
+          link: "/hooks/use-count-down/"
+        },
+        {
+          text: "useLockScroll 阻止滚动",
+          link: "/hooks/use-lock-scroll/"
+        },
+        {
+          text: "useOutterClick 外部点击",
+          link: "/hooks/use-outter-click/"
+        }
+      ],
+    },
   ]
 }
 

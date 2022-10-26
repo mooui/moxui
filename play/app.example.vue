@@ -1,6 +1,6 @@
 <template>
   <div class="play-container">
-    <div>TEST</div>
+    <div>INDEX</div>
   </div>
 </template>
 

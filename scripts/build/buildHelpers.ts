@@ -1,7 +1,3 @@
-import sass from "sass";
-import postcss from "postcss";
-import autoprefixer from "autoprefixer";
-import PostcssPxToViewport from "postcss-px-to-viewport-8-plugin";
 import shelljs from "shelljs";
 
 // 将mooui内容移到外间目录, 避免打包目录嵌套mooui

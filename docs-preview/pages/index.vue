@@ -34,6 +34,7 @@
         >
       </div>
     </div>
+
     <div class="content">
       <div class="tit">插件 Plugins</div>
       <div class="list">
@@ -43,14 +44,30 @@
         <router-link to="/plugins/toast" class="item">Toast 提示</router-link>
       </div>
     </div>
+
+    <div class="content">
+      <div class="tit">组合式API Composables</div>
+      <div class="list">
+        <router-link to="/hooks/use-count-down" class="item"
+          >useCountDown 倒计时</router-link
+        >
+        <router-link to="/hooks/use-lock-scroll" class="item"
+          >useLockScroll 阻止滚动</router-link
+        >
+        <router-link to="/hooks/use-outter-click" class="item"
+          >useOutterClick 外部点击</router-link
+        >
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup></script>
 <style lang="scss">
 .p-index {
+  padding: 60px 0;
   .logo-wrapper {
     .logo {
-      padding: 60px 25px 0;
+      padding: 0 25px;
       vertical-align: middle;
       font-size: 42px;
       line-height: 50px;

@@ -11,12 +11,9 @@ export default defineConfig({
     host: "0.0.0.0",
   },
   resolve: {
-    alias: [
-      {
-        find: /^moxui$/,
-        replacement: path.resolve(__dirname, "../packages/moxui/index"),
-      },
-    ],
+    alias: {
+      moxui: path.resolve(__dirname, "../packages/moxui"),
+    },
   },
   assetsInclude: ["**/*.svga"],
   css: {

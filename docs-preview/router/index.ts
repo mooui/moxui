@@ -13,6 +13,11 @@ const Svga = () => import("../pages/components/svga/index.vue");
 const Loading = () => import("../pages/plugins/loading/index.vue");
 const Toast = () => import("../pages/plugins/toast/index.vue");
 
+const UseCountDown = () => import("../pages/hooks/use-count-down/index.vue");
+const UseLockScroll = () => import("../pages/hooks/use-lock-scroll/index.vue");
+const UseOutterClick = () =>
+  import("../pages/hooks/use-outter-click/index.vue");
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
@@ -70,6 +75,21 @@ const router = createRouter({
       path: "/plugins/toast",
       name: "toast",
       component: Toast,
+    },
+    {
+      path: "/hooks/use-count-down",
+      name: "use-count-down",
+      component: UseCountDown,
+    },
+    {
+      path: "/hooks/use-lock-scroll",
+      name: "use-lock-scroll",
+      component: UseLockScroll,
+    },
+    {
+      path: "/hooks/use-outter-click",
+      name: "use-outter-click",
+      component: UseOutterClick,
     },
     {
       path: "/:pathMatch(.*)*",
