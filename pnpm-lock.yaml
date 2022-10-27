@@ -85,12 +85,12 @@ importers:
 
   docs-preview:
     specifiers:
-      moxui: ^1.1.0
+      moxui: ^1.1.2
       terser: ^5.15.1
       vue: ^3.2.36
       vue-router: ^4.1.5
     dependencies:
-      moxui: 1.1.0_vue@3.2.41
+      moxui: 1.1.2_vue@3.2.41
       vue: 3.2.41
       vue-router: 4.1.5_vue@3.2.41
     devDependencies:
@@ -2945,8 +2945,8 @@ packages:
     hasBin: true
     dev: true
 
-  /moxui/1.1.0_vue@3.2.41:
-    resolution: {integrity: sha512-pU778FZ8Tun3rznjvxVHgSC9FAa8q7N79IoOelGDtYSGe6KB9glA+FuWUJQrzcW6cvTjwODk7aHVYCxUapDC8Q==}
+  /moxui/1.1.2_vue@3.2.41:
+    resolution: {integrity: sha512-1O7RQpH0hUFqRYxkVKAqAX3TpLQBYz4mI6hrm9r0zerGrF4FuskStjuRX1zPoPEe5uBGllCIJjArsscbhl9zFw==}
     peerDependencies:
       vue: ^3.2.36
     dependencies:
