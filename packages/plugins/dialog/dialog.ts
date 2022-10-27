@@ -4,13 +4,13 @@ import { pxToVw } from "@moxui/utils/utils";
 import { MoPopup } from "@moxui/components/popup";
 import { MoButton } from "@moxui/components/button";
 
-import { DialogActionType, dialogProps } from "./types";
+import { dialogProps } from "./types";
 
 import "./style/index.scss";
 
 export default defineComponent({
   name: "Dialog",
-  emits: ["action"],
+  emits: ["close", "cancel", "confirm"],
   props: dialogProps,
   setup(this, props, { slots, emit }) {
     // 内容样式
@@ -76,9 +76,9 @@ export default defineComponent({
 
     function btnClick(index: number) {
       if (formatBtns.value[index].active) {
-        emit("action", DialogActionType.CONFIRM);
+        emit("confirm");
       } else {
-        emit("action", DialogActionType.CANCEL);
+        emit("cancel");
       }
     }
 
@@ -92,15 +92,20 @@ export default defineComponent({
         },
         () =>
           h("div", { class: baseClass }, [
-            props.close
+            slots.close
+              ? h(
+                  "div",
+                  { class: baseClass + "__close-wrapper" },
+                  slots.close()
+                )
+              : props.close
               ? h("a", {
                   href: "javascript:void(0);",
                   class: baseClass + "__close",
                   style: closeStyle.value,
-                  onClick: () => emit("action", DialogActionType.CLOSE),
+                  onClick: () => emit("close"),
                 })
               : null,
-
             props.title
               ? h("div", { class: baseClass + "__title" }, props.title)
               : null,
@@ -120,19 +125,23 @@ export default defineComponent({
                   )
                 ),
 
-            h("div", { class: baseClass + "__btn-wrapper" }, [
-              formatBtns.value.map((btn, index) => {
-                return h(
-                  MoButton,
-                  {
-                    key: btn.txt,
-                    type: btn.active ? "confirm" : "cancel",
-                    onClick: () => btnClick(index),
-                  },
-                  () => btn.txt
-                );
-              }),
-            ]),
+            h(
+              "div",
+              { class: baseClass + "__btn-wrapper" },
+              slots.button?.() || [
+                formatBtns.value.map((btn, index) => {
+                  return h(
+                    MoButton,
+                    {
+                      key: btn.txt,
+                      type: btn.active ? "confirm" : "cancel",
+                      onClick: () => btnClick(index),
+                    },
+                    () => btn.txt
+                  );
+                }),
+              ]
+            ),
           ])
       );
   },

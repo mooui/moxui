@@ -47,7 +47,19 @@ function Dialog(options: DialogOptions): Promise<DialogActionType> {
             close,
             style,
           },
-          { show: show.value, onAction, onClosed }
+          {
+            show: show.value,
+            onClose: () => {
+              onAction(DialogActionType.CLOSE);
+            },
+            onConfirm: () => {
+              onAction(DialogActionType.CONFIRM);
+            },
+            onCancel: () => {
+              onAction(DialogActionType.CANCEL);
+            },
+            onClosed,
+          }
         )
       );
     },

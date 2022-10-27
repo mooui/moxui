@@ -5,6 +5,11 @@
   background: #ffffff;
   border-radius: 30px;
   box-sizing: border-box;
+  &__close-wrapper{
+    position: absolute;
+    top:20px;
+    right:20px;
+  }
   &__close {
     position: absolute;
     background-size: 100% 100%;

@@ -16,10 +16,7 @@ export const dialogProps = {
     required: true as const,
   },
   close: [Boolean, Object] as PropType<boolean | DialogCloseOption>,
-  content: {
-    type: String,
-    required: true as const,
-  },
+  content: String,
   btns: {
     type: Array as PropType<Array<string | { txt: string; active?: boolean }>>,
     default: ["取消", "确认"],
