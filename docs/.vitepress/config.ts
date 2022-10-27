@@ -62,6 +62,10 @@ function getDemoSidebar() {
       collapsed:false,
       items: [
         {
+          text: "Dialog 对话框",
+          link: "/plugins/dialog/"
+        },
+        {
           text: "Loading 加载遮罩",
           link: "/plugins/loading/"
         },

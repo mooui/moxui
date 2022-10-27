@@ -10,7 +10,7 @@ import "./style/index.scss";
 
 export default defineComponent({
   name: "Dialog",
-  emits: ["close", "cancel", "confirm"],
+  emits: ["close", "cancel", "confirm", "update:show"],
   props: dialogProps,
   setup(this, props, { slots, emit }) {
     // 内容样式
@@ -103,7 +103,10 @@ export default defineComponent({
                   href: "javascript:void(0);",
                   class: baseClass + "__close",
                   style: closeStyle.value,
-                  onClick: () => emit("close"),
+                  onClick: () => {
+                    emit("close");
+                    emit("update:show", false);
+                  },
                 })
               : null,
             props.title

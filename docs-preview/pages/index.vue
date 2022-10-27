@@ -38,6 +38,9 @@
     <div class="content">
       <div class="tit">插件 Plugins</div>
       <div class="list">
+        <router-link to="/plugins/dialog" class="item"
+          >Dialog 对话框</router-link
+        >
         <router-link to="/plugins/loading" class="item"
           >Loading 加载遮罩</router-link
         >

@@ -10,6 +10,7 @@ const SmsCode = () => import("../pages/components/sms-code/index.vue");
 const Sticky = () => import("../pages/components/sticky/index.vue");
 const Svga = () => import("../pages/components/svga/index.vue");
 
+const Dialog = () => import("../pages/plugins/dialog/index.vue");
 const Loading = () => import("../pages/plugins/loading/index.vue");
 const Toast = () => import("../pages/plugins/toast/index.vue");
 
@@ -65,6 +66,12 @@ const router = createRouter({
       path: "/components/svga",
       name: "svga",
       component: Svga,
+    },
+
+    {
+      path: "/plugins/dialog",
+      name: "dialog",
+      component: Dialog,
     },
     {
       path: "/plugins/loading",
