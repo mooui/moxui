@@ -1,0 +1,44 @@
+.mo-dialog {
+  position: relative;
+  width: 520px;
+  padding: 60px 40px 40px;
+  background: #ffffff;
+  border-radius: 30px;
+  box-sizing: border-box;
+  &__close {
+    position: absolute;
+    background-size: 100% 100%;
+    background-image: url(./ico-close.png);
+  }
+  &__title {
+    margin-bottom: 32px;
+    font-size: 34px;
+    font-weight: 600;
+    text-align: center;
+    color: #171717;
+    line-height: 42px;
+  }
+  &__content-wrapper{
+    margin: 0 20px 60px;
+    text-align: center;
+    font-size: 28px;
+    color: #515151;
+    line-height: 34px;
+  }
+  &__content {
+    display: inline-block;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  &__btn-wrapper {
+    display: flex;
+    .mo-button {
+      min-width: auto;
+      flex: 1;
+      &:nth-child(2){
+        margin-left: 30px;
+      }
+    }
+  }
+}

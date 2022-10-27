@@ -3,6 +3,7 @@ import { mergeProps, createVNode, ref } from "vue";
 import { mountComponent, getGlobalZIndex, designSize } from "@moxui/utils";
 import { LoadingOptions } from "./types";
 import loading from "./loading";
+export type { LoadingOptions } from "./types";
 
 const CONTAINERCLASS = "mo-relative-hide";
 

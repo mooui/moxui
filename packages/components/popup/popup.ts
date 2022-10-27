@@ -151,7 +151,8 @@ export default defineComponent({
           opened = false;
           emit("close");
         }
-      }
+      },
+      { immediate: true }
     );
 
     // render

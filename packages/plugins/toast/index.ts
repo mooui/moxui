@@ -3,6 +3,7 @@ import { getGlobalZIndex, mountComponent } from "@moxui/utils";
 
 import toast from "./toast";
 import type { ToastInstance, ToastOptions, TypedToastOptions } from "./types";
+export type { ToastOptions, TypedToastOptions } from "./types";
 
 const defaultOptions: ToastOptions = {
   message: "",
