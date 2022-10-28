@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import {resolve} from "path"
+import { resolve } from "path"
 import { demoBlockPlugin } from "vitepress-theme-demoblock";
 
 function getDemoSidebar() {

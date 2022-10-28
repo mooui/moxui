@@ -26,6 +26,12 @@
 ### docs:build    
   构建文档项目
 
+### addDoc    
+  新增组件文档    
+  示例: 
+      pnpm addDoc count-down
+
+
 ### release
   发布组件库, 完成构建, 递增版本号, 发布, 更新文档依赖 等操作    
   参数 maj mid mini 分别对应 大版本  中版本 小版本    

@@ -14,6 +14,7 @@
     "docs:build": "vitepress build docs & pnpm run -C docs-preview build",
     "release": "esno ./scripts/tools/release",
     "release:doc": "esno ./scripts/tools/releaseDocs",
+    "addDoc": "esno ./scripts/tools/initialDoc",
     "initCmp": "esno ./scripts/tools/addNewComponent",
     "initPl": "esno ./scripts/tools/addNewPlugin",
     "rmCmp": "esno ./scripts/tools/removeComponent",

@@ -11,7 +11,7 @@
   "author": "Liqun",
   "license": "MIT",
   "dependencies": {
-    "moxui": "^1.1.2",
+    "moxui": "^1.1.3",
     "vue": "^3.2.36",
     "vue-router": "^4.1.5"
   },
