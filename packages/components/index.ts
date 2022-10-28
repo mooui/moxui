@@ -6,3 +6,4 @@ export * from "./sticky";
 export * from "./sms-code";
 export * from "./icon";
 export * from "./picker";
+export * from "./count-down";

@@ -126,7 +126,7 @@ function useCountDown(
   function reset(time: number = 0, startCount: boolean = true, intv?: number) {
     countTimer && clearTimeout(countTimer);
     if (intv) interval = intv;
-    initCurrent(time);
+    initCurrent(time, true);
     if (startCount) {
       start();
     }

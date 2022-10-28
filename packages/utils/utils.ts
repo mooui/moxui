@@ -36,6 +36,11 @@ function realSize(size: number | string, baseWidth: number = 750) {
   }
 }
 
+// 格式化数字
+function formatNum(num: number, shouldPadStart = true) {
+  return shouldPadStart && num < 10 ? "0" + num : "" + num;
+}
+
 // 以元素实际尺寸获取设计尺寸(750px设计稿)
 function designSize(size: number | string, designWidth = 750) {
   if (typeof size === "number" || /\d+(px)?$/.test(size)) {
@@ -62,4 +67,5 @@ export {
   clientWidth,
   getGlobalZIndex,
   setGlobalZIndex,
+  formatNum,
 };

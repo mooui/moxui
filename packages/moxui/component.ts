@@ -7,6 +7,7 @@ import { MoSticky } from "@moxui/components/sticky";
 import { MoSmsCode } from "@moxui/components/sms-code";
 import { MoIcon } from "@moxui/components/icon";
 import { MoPicker } from "@moxui/components/picker";
+import { MoCountDown } from "@moxui/components/count-down";
 
 export default [
   MoSvga,
