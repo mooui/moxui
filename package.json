@@ -12,6 +12,7 @@
     "dev": "pnpm run -C play dev",
     "docs:dev": "concurrently \"vitepress dev docs\" \"pnpm run -C docs-preview dev\"",
     "docs:build": "vitepress build docs & pnpm run -C docs-preview build",
+    "bs": "vite build & pnpm run -C shaking build",
     "release": "esno ./scripts/tools/release",
     "release:doc": "esno ./scripts/tools/releaseDocs",
     "addDoc": "esno ./scripts/tools/initialDoc",
