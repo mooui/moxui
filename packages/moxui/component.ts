@@ -18,4 +18,5 @@ export default [
   MoSmsCode,
   MoIcon,
   MoPicker,
+  MoCountDown,
 ] as Plugin[];
