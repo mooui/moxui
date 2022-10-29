@@ -1,6 +1,6 @@
 .mo-icon {
   vertical-align: middle;
-  .animate &__circle{
+  .mo-animate &__circle{
     stroke-dasharray: 1194;
     stroke-dashoffset: 1194;
     animation-name:  circle;
@@ -8,7 +8,7 @@
     animation-duration: .6s;
     animation-fill-mode: forwards;
   }
-  .animate &__tick{
+  .mo-animate &__tick{
     stroke-dasharray: 350;
     stroke-dashoffset: 350;
     animation-name:  tick;
@@ -17,7 +17,7 @@
     animation-delay: .6s;
     animation-fill-mode: forwards;
   }
-  .animate &__cross{
+  .mo-animate &__cross{
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
     animation-name:  cross;
@@ -26,10 +26,10 @@
     animation-delay: .6s;
     animation-fill-mode: forwards;
   }
-  .animate &__dot{
+  .mo-animate &__dot{
     animation: mo-fade-in .2s .8s ease-out backwards;
   }
-  .animate &__bar{
+  .mo-animate &__bar{
     stroke-dasharray: 350;
     stroke-dashoffset: 350;
     animation-name:  tick;
@@ -41,10 +41,10 @@
   &__loading-circle{
     stroke-dasharray:900, 2364;
   }
-  &__loading.animate{
+  &__loading.mo-animate{
     animation: mo-rotate 1.7s linear infinite;
   }
-  &__loading.animate &__loading-circle{
+  &__loading.mo-animate &__loading-circle{
     animation: loading-circle 1s linear infinite;
   }
 }
