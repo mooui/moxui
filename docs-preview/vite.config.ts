@@ -57,7 +57,8 @@ export default defineConfig({
         dir: resolve(__dirname, `../dist/docs/mobile`),
         manualChunks: {
           // 拆分代码，这个就是分包，配置完后自动按需加载
-          vue: ["vue", "moxui"],
+          vue: ["vue"],
+          moxui: ["moxui"],
         },
       },
     },
