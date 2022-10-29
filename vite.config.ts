@@ -74,6 +74,25 @@ export default defineConfig({
         "play/**",
         "node_modules/**",
       ],
+      // 替换掉类型定义中的@moxui路径
+      beforeWriteFile(filePath: string, content: string) {
+        if (content.indexOf("@moxui/") !== -1) {
+          let length = 0;
+          const arr = filePath.split("\\");
+          for (let i = arr.length - 2; i >= 0; i--) {
+            if (arr[i] !== "es" && arr[i] !== "lib") {
+              length++;
+            } else {
+              break;
+            }
+          }
+          const replacer = new Array(length).fill("../").join("") || "./";
+          return {
+            filePath,
+            content: content.replace(/@moxui\//g, replacer),
+          };
+        }
+      },
       afterBuild() {
         // 构建scss
         buildScss();
