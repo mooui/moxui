@@ -64,7 +64,7 @@ const iframeSrc = isLocal ? 'http://127.0.0.1:3000/#/index':'/mobile/index.html'
   overflow: hidden;
   position: fixed;
   z-index: 100;
-  top:80px;
+  top:100px;
   right:25px;
   bottom:10px;
   flex-shrink: 0;
