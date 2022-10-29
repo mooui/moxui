@@ -57,7 +57,10 @@ async function scssToCss(filePath: string) {
 
   const newFilePath = filePath.replace(/\.scss/, ".css");
   shelljs.touch(newFilePath);
-  const scssCode = shelljs.cat(filePath).toString();
+  const scssCode = shelljs
+    .cat(filePath)
+    .toString()
+    .replace(/index\.scss/g, "index.css");
   const code = sass.compileString(scssCode);
   // postcss 处理
   const css = await postcssProcessor
