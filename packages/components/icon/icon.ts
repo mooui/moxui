@@ -9,7 +9,6 @@ import {
   renderWarnIcon,
   renderErrorIcon,
 } from "./icon-render";
-import "./style";
 
 export default defineComponent({
   name: "MoIcon",

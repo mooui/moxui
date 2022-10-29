@@ -3,7 +3,6 @@ import { ref, h, defineComponent, computed, watch } from "vue";
 import { realSize } from "@moxui/utils";
 
 import PickerList from "./picker-list";
-import "./style";
 import { Column, pickerProps, PickerType } from "./types";
 
 export default defineComponent({

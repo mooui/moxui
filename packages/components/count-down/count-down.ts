@@ -3,7 +3,6 @@ import { h, defineComponent, watch, computed, onBeforeUnmount } from "vue";
 import { useCountDown } from "@moxui/hooks";
 import { formatNum } from "@moxui/utils/utils";
 
-import "./style";
 import { countDownProps } from "./types";
 
 // 替换字符

@@ -6,8 +6,6 @@ import { MoButton } from "@moxui/components/button";
 
 import { dialogProps } from "./types";
 
-import "./style/index.scss";
-
 export default defineComponent({
   name: "Dialog",
   emits: ["close", "cancel", "confirm", "update:show"],

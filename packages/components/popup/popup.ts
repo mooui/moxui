@@ -17,7 +17,6 @@ import {
 import { callInterceptor, getGlobalZIndex, pxToVw } from "@moxui/utils";
 import { useLockScroll } from "@moxui/hooks";
 
-import "./style";
 import { popupProps } from "./types";
 
 export default defineComponent({
