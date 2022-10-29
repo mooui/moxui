@@ -13,6 +13,7 @@
         <router-link to="/components/button" class="item"
           >Button 按钮</router-link
         >
+        <router-link to="/components/count-down" class="item">CountDown 倒计时</router-link>
         <router-link to="/components/icon" class="item">Icon 图标</router-link>
         <router-link to="/components/marquee" class="item"
           >Marquee 跑马灯</router-link
@@ -118,3 +119,4 @@
   }
 }
 </style>
+

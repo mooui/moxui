@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const Index = () => import("../pages/index.vue");
 const Button = () => import("../pages/components/button/index.vue");
+const CountDown = () => import("../pages/components/count-down/index.vue");
 const Icon = () => import("../pages/components/icon/index.vue");
 const Marquee = () => import("../pages/components/marquee/index.vue");
 const Picker = () => import("../pages/components/picker/index.vue");
@@ -31,6 +32,11 @@ const router = createRouter({
       path: "/components/button",
       name: "button",
       component: Button,
+    },
+    {
+      path: "/components/count-down",
+      name: "count-down",
+      component: CountDown,
     },
     {
       path: "/components/icon",
@@ -106,3 +112,4 @@ const router = createRouter({
 });
 
 export default router;
+

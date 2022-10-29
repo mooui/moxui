@@ -27,6 +27,10 @@ function getDemoSidebar() {
           link: "/components/button/"
         },
         {
+          text: "CountDown 倒计时",
+          link: "/components/count-down/"
+        },
+        {
           text: "Icon 图标",
           link: "/components/icon/"
         },
@@ -137,3 +141,4 @@ export default defineConfig({
   },
   outDir:resolve(__dirname,'../../dist/docs')
 });
+
