@@ -2,16 +2,20 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 
-import { Toast,MoButton } from 'moxui';
+import { Toast, MoButton } from "moxui";
 
-function showMessage(msg:string){
-  Toast(msg)
+function showMessage(msg: string) {
+  Toast(msg);
 }
 </script>
 
 <template>
   <div>
-    <mo-button type="success" size="small" @click="showMessage('A message ~')">TOAST</mo-button>
+    <mo-button
+      type="success"
+      size="small"
+      @click="showMessage('A message ~')"
+    ></mo-button>
   </div>
 </template>
 
