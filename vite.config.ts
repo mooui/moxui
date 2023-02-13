@@ -104,6 +104,6 @@ export default defineConfig({
       },
     }),
     // 替换scss引入
-    replaceScssPlugin(),
+    replaceScssPlugin() as any,
   ],
 });
