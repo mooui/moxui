@@ -47,6 +47,10 @@ function getDemoSidebar() {
           link: "/components/popup/"
         },
         {
+          text: "Scratch 刮奖",
+          link: "/components/scratch/"
+        },
+        {
           text: "SlotMachine 老虎机",
           link: "/components/slot-machine/"
         },
@@ -145,5 +149,6 @@ export default defineConfig({
   },
   outDir:resolve(__dirname,'../../dist/docs')
 });
+
 
 

@@ -9,6 +9,7 @@ import { MoIcon } from "@moxui/components/icon";
 import { MoPicker } from "@moxui/components/picker";
 import { MoCountDown } from "@moxui/components/count-down";
 import { MoSlotMachine } from "@moxui/components/slot-machine";
+import { MoScratch } from "@moxui/components/scratch";
 
 export default [
   MoSvga,

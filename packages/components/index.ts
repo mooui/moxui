@@ -8,3 +8,4 @@ export * from "./icon";
 export * from "./picker";
 export * from "./count-down";
 export * from "./slot-machine";
+export * from "./scratch";

@@ -7,6 +7,7 @@ const Icon = () => import("../pages/components/icon/index.vue");
 const Marquee = () => import("../pages/components/marquee/index.vue");
 const Picker = () => import("../pages/components/picker/index.vue");
 const Popup = () => import("../pages/components/popup/index.vue");
+const Scratch = () => import("../pages/components/scratch/index.vue");
 const SlotMachine = () => import("../pages/components/slot-machine/index.vue");
 const SmsCode = () => import("../pages/components/sms-code/index.vue");
 const Sticky = () => import("../pages/components/sticky/index.vue");
@@ -58,6 +59,11 @@ const router = createRouter({
       path: "/components/popup",
       name: "popup",
       component: Popup,
+    },
+    {
+      path: "/components/scratch",
+      name: "scratch",
+      component: Scratch,
     },
     {
       path: "/components/slot-machine",
@@ -118,5 +124,6 @@ const router = createRouter({
 });
 
 export default router;
+
 
 

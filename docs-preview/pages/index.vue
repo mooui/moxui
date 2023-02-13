@@ -26,6 +26,7 @@
         <router-link to="/components/popup" class="item"
           >Popup 遮罩</router-link
         >
+        <router-link to="/components/scratch" class="item">Scratch 刮奖</router-link>
         <router-link to="/components/slot-machine" class="item"
           >SlotMachine 老虎机</router-link
         >
@@ -124,3 +125,4 @@
   }
 }
 </style>
+
