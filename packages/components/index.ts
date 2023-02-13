@@ -7,3 +7,4 @@ export * from "./sms-code";
 export * from "./icon";
 export * from "./picker";
 export * from "./count-down";
+export * from "./slot-machine";

@@ -10,7 +10,7 @@ import {
   onBeforeUnmount,
 } from "vue";
 import { debounce } from "lodash";
-import { pxToVw, realSize } from "@moxui/utils/utils";
+import { pxToVw, realSize, waitDOMRefresh } from "@moxui/utils";
 
 import "./style";
 import { marqueeProps } from "./types";
@@ -150,7 +150,7 @@ export default defineComponent({
         (isRefresh && props.refreshBehavior === "restart")
       ) {
         reset();
-        waiDOMRefresh(() => {
+        waitDOMRefresh(() => {
           stepScroll();
           emit("scrollEnd");
         });
@@ -169,7 +169,7 @@ export default defineComponent({
       } else {
         reset();
         // 延时, 等待DOM状态更新
-        waiDOMRefresh(() => {
+        waitDOMRefresh(() => {
           initScroll();
           emit("scrollEnd");
         });
@@ -181,12 +181,6 @@ export default defineComponent({
       data.duration = 0;
       data.moved = 0;
       data.distance = 0;
-    }
-    // 等待DOM更新
-    function waiDOMRefresh(callback: Function) {
-      requestAnimationFrame(() => {
-        setTimeout(callback);
-      });
     }
 
     // #region 初始化时机

@@ -24,6 +24,7 @@
         <router-link to="/components/popup" class="item"
           >Popup 遮罩</router-link
         >
+        <router-link to="/components/slot-machine" class="item">SlotMachine </router-link>
         <router-link to="/components/sms-code" class="item"
           >SmsCode 验证码输入</router-link
         >
@@ -119,4 +120,5 @@
   }
 }
 </style>
+
 

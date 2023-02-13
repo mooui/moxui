@@ -7,6 +7,7 @@ const Icon = () => import("../pages/components/icon/index.vue");
 const Marquee = () => import("../pages/components/marquee/index.vue");
 const Picker = () => import("../pages/components/picker/index.vue");
 const Popup = () => import("../pages/components/popup/index.vue");
+const SlotMachine = () => import("../pages/components/slot-machine/index.vue");
 const SmsCode = () => import("../pages/components/sms-code/index.vue");
 const Sticky = () => import("../pages/components/sticky/index.vue");
 const Svga = () => import("../pages/components/svga/index.vue");
@@ -57,6 +58,11 @@ const router = createRouter({
       path: "/components/popup",
       name: "popup",
       component: Popup,
+    },
+    {
+      path: "/components/slot-machine",
+      name: "slot-machine",
+      component: SlotMachine,
     },
     {
       path: "/components/sms-code",
@@ -112,4 +118,5 @@ const router = createRouter({
 });
 
 export default router;
+
 

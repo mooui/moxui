@@ -8,6 +8,7 @@ import { MoSmsCode } from "@moxui/components/sms-code";
 import { MoIcon } from "@moxui/components/icon";
 import { MoPicker } from "@moxui/components/picker";
 import { MoCountDown } from "@moxui/components/count-down";
+import { MoSlotMachine } from "@moxui/components/slot-machine";
 
 export default [
   MoSvga,

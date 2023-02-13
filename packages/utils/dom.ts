@@ -39,4 +39,17 @@ function isDescendant(root: Element, ele: Element) {
   return false;
 }
 
-export { stopPropagation, preventDefault, getScrollParent, isDescendant };
+// 等待DOM更新
+function waitDOMRefresh(callback: Function) {
+  requestAnimationFrame(() => {
+    setTimeout(callback);
+  });
+}
+
+export {
+  stopPropagation,
+  preventDefault,
+  getScrollParent,
+  isDescendant,
+  waitDOMRefresh,
+};

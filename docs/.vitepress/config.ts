@@ -47,6 +47,10 @@ function getDemoSidebar() {
           link: "/components/popup/"
         },
         {
+          text: "SlotMachine ",
+          link: "/components/slot-machine/"
+        },
+        {
           text: "SmsCode 验证码输入",
           link: "/components/sms-code/"
         },
@@ -141,4 +145,5 @@ export default defineConfig({
   },
   outDir:resolve(__dirname,'../../dist/docs')
 });
+
 
