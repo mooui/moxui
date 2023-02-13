@@ -236,11 +236,9 @@ export default defineComponent({
             width: size.value.width,
             height: size.value.height,
             onTouchstart: (e: TouchEvent) => {
-              console.log(11111111, props.scratchAble, finished);
               if (props.scratchAble && !finished) {
                 touchingFlag = true;
                 e.preventDefault();
-                console.log(2222);
                 drawScratch(e);
               }
             },
