@@ -13,7 +13,9 @@
         <router-link to="/components/button" class="item"
           >Button 按钮</router-link
         >
-        <router-link to="/components/count-down" class="item">CountDown 倒计时</router-link>
+        <router-link to="/components/count-down" class="item"
+          >CountDown 倒计时</router-link
+        >
         <router-link to="/components/icon" class="item">Icon 图标</router-link>
         <router-link to="/components/marquee" class="item"
           >Marquee 跑马灯</router-link
@@ -24,7 +26,9 @@
         <router-link to="/components/popup" class="item"
           >Popup 遮罩</router-link
         >
-        <router-link to="/components/slot-machine" class="item">SlotMachine </router-link>
+        <router-link to="/components/slot-machine" class="item"
+          >SlotMachine 老虎机</router-link
+        >
         <router-link to="/components/sms-code" class="item"
           >SmsCode 验证码输入</router-link
         >
@@ -120,5 +124,3 @@
   }
 }
 </style>
-
-

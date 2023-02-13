@@ -47,7 +47,7 @@ function getDemoSidebar() {
           link: "/components/popup/"
         },
         {
-          text: "SlotMachine ",
+          text: "SlotMachine 老虎机",
           link: "/components/slot-machine/"
         },
         {
