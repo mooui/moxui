@@ -6,6 +6,7 @@ import {
   computed,
   onMounted,
   nextTick,
+  onBeforeUnmount,
 } from "vue";
 import {
   Downloader,
@@ -18,7 +19,7 @@ import {
 import { svgaProps } from "./types";
 import "./style";
 import { pxToVw } from "@moxui/utils/utils";
-
+const cacheSVGA = ref<{ [key: string]: VideoEntity }>({});
 export default defineComponent({
   name: "MoSvga",
   props: svgaProps,
@@ -27,9 +28,8 @@ export default defineComponent({
     const isReady = ref(false);
     const isShowSVGA = ref(false);
     const player = ref<Player>();
-    const cacheSVGA = ref<{ [key: string]: { svgaData: VideoEntity } }>({});
-    const canvasRef = ref<HTMLCanvasElement>();
 
+    const canvasRef = ref<HTMLCanvasElement>();
     const isSVGA = computed(() =>
       /(^data:application\/octet-stream)|(\.svga$)/i.test(props.file)
     );
@@ -61,11 +61,9 @@ export default defineComponent({
           const parser = new Parser();
 
           svgaData = await parser.do(await downloader.get(props.file));
-          cacheSVGA.value[props.file] = {
-            svgaData,
-          };
+          cacheSVGA.value[props.file] = svgaData;
         } else {
-          svgaData = cacheSVGA.value[props.file].svgaData;
+          svgaData = cacheSVGA.value[props.file];
         }
 
         await player.value?.mount(svgaData);
@@ -112,6 +110,11 @@ export default defineComponent({
           init();
         }
       );
+    });
+
+    onBeforeUnmount(() => {
+      player.value?.clear();
+      player.value?.destroy();
     });
 
     function start() {
